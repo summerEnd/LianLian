@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<CheckBox
+    android:id="@+id/button"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/check_drawable_red"
+    android:button="@null"
+    android:paddingBottom="@dimen/dimen_5"
+    android:paddingLeft="@dimen/dimen_10"
+    android:paddingRight="@dimen/dimen_10"
+    android:paddingTop="@dimen/dimen_5"
+    android:text="asdfas"
+    android:singleLine="true"
+    android:textColor="#919294"
+    android:textSize="@dimen/text_13"/>

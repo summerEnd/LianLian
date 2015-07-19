@@ -1,0 +1,121 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lianlian.ui.login.AddInfoActivity1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_8"
+        android:background="@drawable/shape_rect_black"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dimen_20"
+        android:paddingTop="@dimen/dimen_8">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="@dimen/dimen_100"
+            android:layout_height="@dimen/dimen_100"
+            android:src="@drawable/add_image"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:text="上传最美的照片，约最美的练"
+            android:textColor="#919294"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_8"
+        android:background="@drawable/shape_rect_black"
+
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_8">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/complete_info_text_1"
+                android:text="昵称："/>
+
+            <EditText
+                android:id="@+id/edit_nick"
+                style="@style/complete_info_edit_1"
+                android:text="笨笨"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_8"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/complete_info_text_1"
+                android:text="性别："/>
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/boy"
+                    android:drawableLeft="@drawable/boy"
+                    style="@style/complete_info_rb"
+                    android:text="男生"/>
+
+                <RadioButton
+                    android:id="@+id/girl"
+                    android:drawableLeft="@drawable/girl"
+
+                    style="@style/complete_info_rb"
+                    android:layout_marginLeft="@dimen/dimen_10"
+                    android:text="女生"/>
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/complete_info_text_1"
+                android:text="生日："/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/complete_info_edit_1"
+                android:text="@string/select_birthday"
+                android:textColor="#a3a3a5"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_marginTop="@dimen/dimen_35"
+        android:id="@+id/btn_next"
+        style="@style/redButton.mid"
+        android:text="下一步"/>
+</LinearLayout>

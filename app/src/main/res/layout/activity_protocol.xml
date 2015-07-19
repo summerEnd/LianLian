@@ -1,0 +1,45 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lianlian.ui.login.ProtocolActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dimen_8"
+        android:layout_weight="1"
+        android:background="@drawable/shape_rect_black"
+        android:paddingBottom="@dimen/dimen_10"
+        android:paddingLeft="@dimen/dimen_15"
+        android:paddingRight="@dimen/dimen_15"
+        android:paddingTop="@dimen/dimen_10">
+
+        <TextView
+            android:id="@+id/tv_protocol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/protocol"
+            android:textColor="#c3c3c4"
+            android:textSize="@dimen/text_13"/>
+    </ScrollView>
+
+    <CheckBox
+        android:id="@+id/cbRead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_10"
+        android:text="我已阅读"
+        android:textColor="#c3c3c4"
+        android:textSize="@dimen/text_13"/>
+
+    <Button
+        android:id="@+id/btn_agree"
+        style="@style/redButton.mid"
+
+        android:layout_marginBottom="@dimen/dimen_25"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:text="同意"/>
+</LinearLayout>

@@ -1,0 +1,105 @@
+<resources>
+
+    <style name="redButton">
+        <item name="android:background">@drawable/red_button</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="complete_info_text_1">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:textSize">@dimen/text_16</item>
+    </style>
+
+    <style name="complete_info_edit_1">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/shape_rect_black_2</item>
+        <item name="android:textColor">#a3a3a5</item>
+        <item name="android:paddingTop">@dimen/dimen_7</item>
+        <item name="android:paddingBottom">@dimen/dimen_7</item>
+        <item name="android:paddingLeft">@dimen/dimen_5</item>
+        <item name="android:paddingRight">@dimen/dimen_5</item>
+    </style>
+
+    <style name="complete_info_rb">
+        <item name="android:paddingTop">@dimen/dimen_8</item>
+        <item name="android:paddingBottom">@dimen/dimen_8</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/check_drawable_red</item>
+        <item name="android:textSize">@dimen/text_16</item>
+        <item name="android:button">@null</item>
+        <item name="android:paddingRight">@dimen/dimen_10</item>
+        <item name="android:paddingLeft">@dimen/dimen_10</item>
+        <item name="android:drawableLeft">@drawable/ic_launcher</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="api_login">
+        <item name="android:layout_width">@dimen/dimen_80</item>
+        <item name="android:layout_height">@dimen/dimen_80</item>
+    </style>
+
+    <style name="register_edit_style1">
+        <item name="android:background">#0000</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:drawablePadding">@dimen/dimen_10</item>
+        <item name="android:textColorHint">#fff</item>
+        <item name="android:textSize">@dimen/text_15</item>
+    </style>
+
+    <style name="register_edit_style2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/rect_transparent</item>
+        <item name="android:paddingBottom">@dimen/dimen_9</item>
+        <item name="android:paddingLeft">@dimen/dimen_8</item>
+        <item name="android:paddingRight">@dimen/dimen_8</item>
+        <item name="android:paddingTop">@dimen/dimen_9</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:textColorHint">#bebebe</item>
+        <item name="android:textSize">@dimen/text_15</item>
+    </style>
+
+    <style name="redButton.mid">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginLeft">@dimen/dimen_50</item>
+        <item name="android:layout_marginRight">@dimen/dimen_50</item>
+    </style>
+
+    <style name="login_ic_style">
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:layout_margin">@dimen/dimen_10</item>
+        <item name="android:layout_width">@dimen/dimen_25</item>
+        <item name="android:layout_height">@dimen/dimen_25</item>
+    </style>
+
+    <style name="tab_main">
+        <item name="android:button">@null</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">@dimen/text_13</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textColor">@color/main_tab_text_color</item>
+    </style>
+
+    <style name="tab_title">
+        <item name="android:paddingTop">@dimen/dimen_15</item>
+        <item name="android:paddingBottom">@dimen/dimen_15</item>
+        <item name="android:paddingLeft">@dimen/dimen_23</item>
+        <item name="android:paddingRight">@dimen/dimen_23</item>
+        <item name="android:textColor">@color/windowTitleColor</item>
+        <item name="android:textSize">@dimen/text_16</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+</resources>

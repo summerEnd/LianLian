@@ -1,0 +1,68 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="BaseTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="android:windowAnimationStyle">@style/window_animation</item>
+        <item name="android:textColorHint">#aaaaaa</item>
+        <item name="android:dialogTheme">@style/dialogTheme</item>
+        <item name="android:alertDialogTheme">@style/alertDialog</item>
+        <item name="actionBarStyle">@style/mActionBarStyle</item>
+        <item name="android:windowBackground">@drawable/windowBackground</item>
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">false</item>
+        <item name="homeAsUpIndicator">@drawable/back</item>
+    </style>
+
+    <style name="AppTheme" parent="BaseTheme">
+
+    </style>
+
+    <style name="window_animation">
+        <!--打开新的activity 用的动画-->
+        <item name="android:activityOpenEnterAnimation">@anim/window_open_enter</item>
+        <item name="android:activityOpenExitAnimation">@anim/window_open_exit</item>
+
+        <!--关闭activity时的动画-->
+        <item name="android:activityCloseEnterAnimation">@anim/window_close_enter</item>
+        <item name="android:activityCloseExitAnimation">@anim/window_close_exit</item>
+    </style>
+
+    <style name="dialogTheme" parent="android:Theme.Holo.Light.Dialog.MinWidth">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="loginActivity" parent="Theme.AppCompat.Light.DialogWhenLarge">
+
+    </style>
+
+    <style name="alertDialog" parent="android:Theme.Holo.Light.Dialog">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowMinWidthMajor">65%</item>
+        <item name="android:windowMinWidthMinor">95%</item>
+    </style>
+
+    <style name="mActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="background">@drawable/windowTitleBackground</item>
+        <item name="displayOptions">showTitle|homeAsUp|showCustom</item>
+        <item name="titleTextStyle">@style/titleTextStyle</item>
+    </style>
+
+    <style name="titleTextStyle">
+        <item name="android:textColor">@color/windowTitleColor</item>
+        <item name="android:textSize">@dimen/windowTitleTextSize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:shadowColor">#BB000000</item>
+        <item name="android:shadowRadius">2.75</item>
+    </style>
+
+    <!-- 界面背景-->
+    <drawable name="windowBackground">#13161b</drawable>
+    <!-- 标题栏背景-->
+    <drawable name="windowTitleBackground">#1e2228</drawable>
+    <color name="windowTitleBackground">#1e2228</color>
+
+    <!-- 标题栏字体颜色-->
+    <color name="windowTitleColor">#fd1164</color>
+</resources>

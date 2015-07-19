@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffff"
+    android:orientation="vertical"
+    android:padding="@dimen/dimen_20">
+
+    <LinearLayout
+        android:id="@+id/openCamera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/pictrue_window_btn"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/dimen_8">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:drawableLeft="@drawable/camera"
+            android:drawablePadding="@dimen/dimen_5"
+            android:text="拍照"
+            android:textColor="#ec0144"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/openAlbum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_10"
+        android:background="@drawable/pictrue_window_btn"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/dimen_8">
+
+        <TextView
+            android:id="@+id/picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:drawableLeft="@drawable/ic_pictrue"
+            android:drawablePadding="@dimen/dimen_5"
+            android:text="选取相册照片"
+            android:textColor="#ec0144"/>
+
+    </LinearLayout>
+</LinearLayout>

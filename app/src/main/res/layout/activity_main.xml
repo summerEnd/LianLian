@@ -1,0 +1,54 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_home"
+            style="@style/tab_main"
+            android:drawableTop="@drawable/home"
+            android:text="首页"/>
+
+        <RadioButton
+
+            android:id="@+id/rb_cm"
+            style="@style/tab_main"
+
+            android:drawableTop="@drawable/cm"
+            android:text="发现"/>
+
+        <ImageView
+            android:layout_width="@dimen/dimen_50"
+            android:layout_height="@dimen/dimen_50"
+            android:src="@drawable/ic_launcher"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_ll"
+            style="@style/tab_main"
+            android:drawableTop="@drawable/heart"
+            android:text="恋恋"/>
+
+        <RadioButton
+            android:id="@+id/rb_me"
+            style="@style/tab_main"
+            android:drawableTop="@drawable/me"
+            android:text="我"/>
+    </RadioGroup>
+</LinearLayout>

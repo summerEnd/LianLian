@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/windowTitleBackground">
+
+        <ImageView
+            android:layout_marginLeft="@dimen/dimen_10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/search"/>
+
+        <com.sp.lib.widget.nav.title.PageStrip
+            android:id="@+id/pagerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            app:indicator="@drawable/home_tab_indicator"
+            >
+
+            <com.lianlian.ui.widget.HomeTab
+                style="@style/tab_title"
+                android:text="发现"/>
+
+            <com.lianlian.ui.widget.HomeTab
+                style="@style/tab_title"
+                android:text="遇见"/>
+        </com.sp.lib.widget.nav.title.PageStrip>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/sms"/>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>
