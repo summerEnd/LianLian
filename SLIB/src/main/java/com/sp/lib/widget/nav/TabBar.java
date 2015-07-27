@@ -5,8 +5,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.sp.lib.widget.nav.title.ITab;
-
 import java.util.ArrayList;
 
 public class TabBar extends LinearLayout implements View.OnClickListener {

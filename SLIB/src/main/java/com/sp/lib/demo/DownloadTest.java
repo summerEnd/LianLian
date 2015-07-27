@@ -18,8 +18,8 @@ import android.widget.TextView;
 
 import com.sp.lib.R;
 import com.sp.lib.common.support.adapter.ViewHolderAdapter;
-import com.sp.lib.common.util.ContextUtil;
 import com.sp.lib.common.support.update.Downloader;
+import com.sp.lib.common.util.ContextUtil;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

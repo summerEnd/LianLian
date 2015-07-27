@@ -92,16 +92,23 @@ public class PageStrip extends LinearLayout implements ViewPager.OnPageChangeLis
     @Override
     protected void onFinishInflate() {
         int count = getChildCount();
+        int checked = -1;
         for (int i = 0; i < count; i++) {
             View child = getChildAt(i);
             if (child instanceof ITab) {
                 ITab tab = (ITab) child;
                 addTabInner(tab);
+                if (tab.isTabSelected()) {
+                    checked = i;
+                }
             }
+        }
+        if (checked >= 0) {
+            check(checked);
         }
     }
 
-    public ITab getTab(int position){
+    public ITab getTab(int position) {
         return tabs.get(position);
     }
 
@@ -195,8 +202,8 @@ public class PageStrip extends LinearLayout implements ViewPager.OnPageChangeLis
         if (mPager != null) {
             mPager.setCurrentItem(position);
         } else {
-            if (mOnTitleChangeListener!=null){
-                mOnTitleChangeListener.onSelected(position,tab);
+            if (mOnTitleChangeListener != null) {
+                mOnTitleChangeListener.onSelected(position, tab);
             }
             View tabView = tab.getView();
             indicatorDrawable.setBounds(tabView.getLeft(), tabView.getBottom() - indicatorHeight, tabView.getRight(), tabView.getBottom());

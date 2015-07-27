@@ -4,10 +4,8 @@ import android.content.Context;
 import android.database.DataSetObserver;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
-import android.widget.ListView;
 
 import com.sp.lib.R;
 

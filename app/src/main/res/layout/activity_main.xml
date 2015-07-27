@@ -36,7 +36,7 @@
         <ImageView
             android:layout_width="@dimen/dimen_50"
             android:layout_height="@dimen/dimen_50"
-            android:src="@drawable/ic_launcher"
+            android:src="@drawable/home_icon"
             />
 
         <RadioButton

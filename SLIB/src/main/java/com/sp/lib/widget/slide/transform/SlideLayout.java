@@ -8,8 +8,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 
-import com.sp.lib.widget.slide.transform.Transformer;
-
 public class SlideLayout extends FrameLayout {
     ViewDragHelper mDragHelper;
     /**

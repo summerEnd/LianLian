@@ -4,4 +4,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
     <dimen name="windowTitleTextSize">@dimen/text_17</dimen>
+    <dimen name="avatarSize">@dimen/dimen_90</dimen>
+    <dimen name="meet_item_space">@dimen/dimen_3</dimen>
+    <dimen name="meet_item_space_half">@dimen/dimen_1.5</dimen>
 </resources>

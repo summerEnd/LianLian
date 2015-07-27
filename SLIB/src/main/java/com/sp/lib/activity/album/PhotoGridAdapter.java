@@ -1,7 +1,6 @@
 package com.sp.lib.activity.album;
 
 import android.content.Context;
-import android.graphics.Point;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

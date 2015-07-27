@@ -3,7 +3,6 @@ package com.sp.lib.common.util.time;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.widget.TextView;
 
 import java.util.Timer;
 import java.util.TimerTask;

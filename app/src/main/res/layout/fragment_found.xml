@@ -1,0 +1,43 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#32363c"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/dimen_5"
+    android:paddingRight="@dimen/dimen_5"
+    android:paddingTop="@dimen/dimen_10"
+    tools:context="com.lianlian.ui.home.FoundFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/ed_keyword"
+            style="@style/complete_info_edit_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="昵称/恋恋ID"
+            android:textSize="@dimen/text_13"/>
+
+        <TextView
+            android:id="@+id/btn_search"
+            style="@style/redButton"
+            android:textSize="@dimen/text_13"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dimen_5"
+            android:paddingLeft="@dimen/dimen_15"
+            android:paddingRight="@dimen/dimen_15"
+            android:text="@string/search"/>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

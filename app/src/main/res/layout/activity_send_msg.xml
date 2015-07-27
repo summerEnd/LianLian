@@ -1,0 +1,53 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lianlian.ui.home.SendMsgActivity">
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#e9e9ea"
+        android:orientation="horizontal"
+        android:padding="@dimen/dimen_8">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="自定义"
+            android:textColor="#808080"/>
+
+        <EditText
+            android:id="@+id/editMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_5"
+            android:background="@drawable/chat"
+            android:hint="想约ta？快说点什么～"
+            android:padding="@dimen/dimen_5"
+            android:textSize="@dimen/text_14"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/dimen_15">
+
+        <ImageView
+            android:id="@+id/send"
+            android:layout_width="@dimen/dimen_70"
+            android:layout_height="@dimen/dimen_70"
+            android:src="@drawable/chat_ta"/>
+    </LinearLayout>
+</LinearLayout>

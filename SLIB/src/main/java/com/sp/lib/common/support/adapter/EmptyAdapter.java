@@ -1,12 +1,10 @@
 package com.sp.lib.common.support.adapter;
 
 import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * 一个空的Adapter测试listView用的

@@ -1,15 +1,11 @@
 package com.sp.lib.common.support.net.client;
 
 import android.app.Dialog;
-import android.util.Log;
 
 import com.loopj.android.http.JsonHttpResponseHandler;
-import com.sp.lib.R;
-import com.sp.lib.common.util.ContextUtil;
 import com.sp.lib.common.util.SLog;
 
 import org.apache.http.Header;
-import org.apache.http.conn.ConnectTimeoutException;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

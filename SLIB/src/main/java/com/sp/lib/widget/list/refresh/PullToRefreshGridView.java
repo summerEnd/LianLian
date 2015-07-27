@@ -8,7 +8,7 @@ import android.widget.AbsListView.OnScrollListener;
 import android.widget.Adapter;
 import android.widget.GridView;
 
-import static com.sp.lib.widget.list.refresh.ILoadingLayout.*;
+import static com.sp.lib.widget.list.refresh.ILoadingLayout.State;
 
 /**
  * 这个类实现了GridView下拉刷新，上加载更多和滑到底部自动加载

@@ -3,11 +3,8 @@ package com.sp.lib.widget.slide.toggle;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.AttributeSet;
-import android.view.View;
 
 import com.sp.lib.widget.slide.toggle.shape.ArcShape;
 import com.sp.lib.widget.slide.toggle.shape.ArcTransformer;

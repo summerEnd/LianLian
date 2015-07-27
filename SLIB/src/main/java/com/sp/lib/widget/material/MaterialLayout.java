@@ -3,7 +3,6 @@ package com.sp.lib.widget.material;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
-import android.widget.AdapterView;
 import android.widget.FrameLayout;
 
 public class MaterialLayout extends FrameLayout {

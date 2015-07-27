@@ -2,12 +2,14 @@
 <resources>
     <!-- 基本文字大小-->
     <dimen name="text_13">13sp</dimen>
+    <dimen name="text_14">14sp</dimen>
     <dimen name="text_15">15sp</dimen>
     <dimen name="text_16">16sp</dimen>
     <dimen name="text_17">17sp</dimen>
 
     <!-- 基本dimen大小-->
     <dimen name="dimen_1">1dp</dimen>
+    <dimen name="dimen_1.5">1.5dp</dimen>
     <dimen name="dimen_2">2dp</dimen>
     <dimen name="dimen_3">3dp</dimen>
     <dimen name="dimen_4">4dp</dimen>
@@ -39,8 +41,10 @@
     <dimen name="dimen_28">28dp</dimen>
     <dimen name="dimen_29">29dp</dimen>
 
+    <dimen name="dimen_30">30dp</dimen>
     <dimen name="dimen_35">35dp</dimen>
     <dimen name="dimen_50">50dp</dimen>
+    <dimen name="dimen_70">70dp</dimen>
     <dimen name="dimen_80">80dp</dimen>
     <dimen name="dimen_90">90dp</dimen>
     <dimen name="dimen_100">100dp</dimen>

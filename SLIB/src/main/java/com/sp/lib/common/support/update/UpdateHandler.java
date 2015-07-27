@@ -7,10 +7,8 @@ import android.content.DialogInterface;
 import android.database.ContentObserver;
 import android.net.Uri;
 import android.os.Handler;
-import android.text.TextUtils;
 
 import com.sp.lib.R;
-import com.sp.lib.common.util.ContextUtil;
 
 import java.util.ArrayList;
 

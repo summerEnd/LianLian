@@ -1,7 +1,5 @@
 package com.sp.lib.common.support.net.client;
 
-import android.util.Log;
-
 import com.loopj.android.http.RequestParams;
 
 import org.apache.http.message.BasicNameValuePair;

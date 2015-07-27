@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#32363c"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="@dimen/dimen_5"
+        >
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="@dimen/dimen_20"
+            android:layout_height="@dimen/dimen_20"
+            android:src="@drawable/rank_face"/>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_5"
+            android:text="颜值榜"
+            android:textColor="#fff"
+            android:textSize="@dimen/text_16"/>
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/image_failed"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/vip"
+                android:text="王大丫"
+                android:textColor="#fff"
+                android:textSize="@dimen/text_15"
+                />
+
+            <com.sp.lib.widget.AutoLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_name">
+
+                <TextView
+                    android:layout_marginTop="@dimen/dimen_4"
+                    android:id="@+id/tv_label1"
+                    android:layout_marginRight="@dimen/dimen_4"
+                    style="@style/home_item_text"
+                    android:text="asfasdf"/>
+
+                <TextView
+                    android:layout_marginTop="@dimen/dimen_4"
+                    android:id="@+id/tv_label2"
+                    style="@style/home_item_text"
+                    android:text="从速起走出来的男人"/>
+            </com.sp.lib.widget.AutoLayout>
+
+        </RelativeLayout>
+    </FrameLayout>
+</LinearLayout>

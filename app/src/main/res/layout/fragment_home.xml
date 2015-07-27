@@ -9,10 +9,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/windowTitleBackground">
+        android:background="@drawable/windowTitleBackground"
+        android:paddingLeft="@dimen/dimen_10"
+        android:paddingRight="@dimen/dimen_10">
 
         <ImageView
-            android:layout_marginLeft="@dimen/dimen_10"
+            android:id="@+id/search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -37,11 +39,12 @@
         </com.sp.lib.widget.nav.title.PageStrip>
 
         <ImageView
+            android:id="@+id/msg"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/sms"/>
+            android:src="@drawable/env"/>
     </RelativeLayout>
 
     <FrameLayout

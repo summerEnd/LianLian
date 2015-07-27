@@ -1,5 +1,7 @@
 package com.lianlian.ui;
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -16,7 +18,8 @@ import com.lianlian.R;
  * Created by Lincoln on 15/7/12.
  * 所有Activity的基类
  */
-public class BaseActivity extends AppCompatActivity implements View.OnClickListener{
+public class BaseActivity extends AppCompatActivity implements View.OnClickListener {
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +35,8 @@ public class BaseActivity extends AppCompatActivity implements View.OnClickListe
             actionBar.setCustomView(titleTextView, lp);
             actionBar.setTitle("  ");
         }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+            getWindow().setStatusBarColor(getResources().getColor(R.color.windowTitleBackground));
     }
 
     @Override
