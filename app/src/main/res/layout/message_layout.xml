@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/base_bg_color"
+              android:orientation="vertical">
+
+
+    <com.sp.lib.widget.nav.title.PageStrip
+        android:id="@+id/pagerTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        app:indicator="@drawable/home_tab_indicator"
+        >
+
+        <com.lianlian.ui.widget.HomeTab
+            style="@style/message_tab_title"
+            android:text="恋恋"/>
+
+        <com.lianlian.ui.widget.HomeTab
+            style="@style/message_tab_title"
+            android:text="出没"/>
+
+        <com.lianlian.ui.widget.HomeTab
+            style="@style/message_tab_title"
+            android:text="聊天"/>
+
+        <com.lianlian.ui.widget.HomeTab
+            style="@style/message_tab_title"
+            android:text="通知"/>
+    </com.sp.lib.widget.nav.title.PageStrip>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+
+</LinearLayout>

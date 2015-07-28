@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.lianlian.ui.other.MessageItemSlideLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:layout_width="@dimen/delete_button_width"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:background="#ff0000"
+        android:gravity="center"
+        android:text="删除"
+        android:textColor="#ffffff" />
+
+    <LinearLayout
+        android:id="@+id/front"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/widget_bg_color"
+        android:padding="10dp" >
+
+        <com.lianlian.ui.other.CircleImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/header" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp" >
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/header" />
+
+            <TextView
+                android:id="@+id/nameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="5dp"
+                android:drawableRight="@drawable/woman_icon"
+                android:text="小呆瓜"
+                android:textColor="#ffffff"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/timeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="3dp"
+                android:layout_toRightOf="@id/nameTextView"
+                android:text="2015-06-19 20:14"
+                android:textColor="#aaffffff"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/labelTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nameTextView"
+                android:text="传媒"
+                android:textColor="#aaffffff"
+                android:textSize="13dp" />
+
+            <TextView
+                android:id="@+id/contentTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/labelTextView"
+                android:text="我想和你一起恋恋喔"
+                android:textColor="#aaffffff"
+                android:textSize="18dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</com.lianlian.ui.other.MessageItemSlideLayout>

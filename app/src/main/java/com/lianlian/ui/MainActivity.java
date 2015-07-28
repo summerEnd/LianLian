@@ -1,9 +1,11 @@
 package com.lianlian.ui;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentTabHost;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TabWidget;
 
 import com.lianlian.R;
 import com.lianlian.ui.home.HomeFragment;
@@ -46,4 +48,6 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
 
         }
     }
+
+
 }

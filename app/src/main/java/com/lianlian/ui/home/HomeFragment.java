@@ -1,5 +1,6 @@
 package com.lianlian.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 
 import com.lianlian.R;
 import com.lianlian.ui.BaseFragment;
+import com.lianlian.ui.other.MessageActivity;
 import com.lianlian.utils.FragmentUtils;
 import com.sp.lib.widget.nav.title.ITab;
 import com.sp.lib.widget.nav.title.PageStrip;
@@ -81,7 +83,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.msg: {
-                new BecomePaoFriends().show(getChildFragmentManager(), "sad");
+                startActivity(new Intent(getActivity(), MessageActivity.class));
                 break;
             }
             case R.id.search:{

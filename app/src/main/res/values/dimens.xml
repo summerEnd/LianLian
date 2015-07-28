@@ -7,4 +7,6 @@
     <dimen name="avatarSize">@dimen/dimen_90</dimen>
     <dimen name="meet_item_space">@dimen/dimen_3</dimen>
     <dimen name="meet_item_space_half">@dimen/dimen_1.5</dimen>
+
+    <dimen name="delete_button_width">@dimen/dimen_80</dimen>
 </resources>
