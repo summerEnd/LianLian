@@ -84,17 +84,25 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/white_round_rect"
                     android:text="传媒"
-                    android:textSize="10sp"
+                    android:padding="1dp"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
                     />
 
                 <TextView
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+
                     android:id="@+id/id_line1_line2_tv2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dip"
                     android:background="@drawable/white_round_rect"
                     android:text="事业线"
-                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
                     />
 
                 <ImageView
