@@ -189,12 +189,9 @@
             </LinearLayout>
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
+                style="@style/redButton.mid"
                 android:layout_marginTop="30dp"
                 android:text="注销"
-                android:textColor="#ffffff"
                 android:textSize="20dp" />
         </LinearLayout>
     </ScrollView>

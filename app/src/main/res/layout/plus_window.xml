@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#8000"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/goMeet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/go_meet"/>
+
+        <ImageView
+            android:id="@+id/sendLianLian"
+            android:layout_marginLeft="@dimen/dimen_30"
+            android:layout_marginRight="@dimen/dimen_30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fa_lianlian"/>
+
+        <ImageView
+            android:id="@+id/invite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/invite"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/dismiss"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/plus_action"/>
+
+</RelativeLayout>

@@ -22,6 +22,8 @@
     <string name="hint_code_sms">填写验证码</string>
     <string name="title_activity_protocol">用户协议</string>
 
+
+
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_hot">HotActivity</string>
@@ -32,4 +34,11 @@
     <string name="title_activity_pay_rank">打赏榜</string>
     <string name="title_activity_tuhao_rank">土豪</string>
     <string name="title_activity_send_msg">发消息</string>
+    <string name="title_activity_invite_friends">邀请好友</string>
+    <string name="title_activity_send_lian_lian">发恋恋</string>
+    <string name="title_activity_meet">去遇见</string>
+
+    <string name="recore_voice_pic">录制有声图片（10s）</string>
+    <string name="recore_dsc">&#160;&#160;&#160;&#160;(成为 “颜色值”、“人气榜”、“收入榜”及“土豪榜”的任一榜单TOP50、录音市场即可升级为30s)</string>
+
 </resources>

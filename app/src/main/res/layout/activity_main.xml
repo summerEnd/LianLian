@@ -16,6 +16,7 @@
         android:id="@+id/radioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#000000"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -30,10 +31,11 @@
             android:id="@+id/rb_cm"
             style="@style/tab_main"
 
-            android:drawableTop="@drawable/cm"
-            android:text="发现"/>
+            android:drawableTop="@drawable/chumo"
+            android:text="出没"/>
 
         <ImageView
+            android:id="@+id/plusAction"
             android:layout_width="@dimen/dimen_50"
             android:layout_height="@dimen/dimen_50"
             android:src="@drawable/home_icon"

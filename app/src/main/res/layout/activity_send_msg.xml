@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.lianlian.ui.home.SendMsgActivity">
+    tools:context="com.lianlian.ui.main.home.SendMsgActivity">
 
     <ListView
         android:id="@+id/listView"

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:top="5dip" android:bottom="5dip" android:left="5dip" android:right="5dip">
+        <bitmap android:src="@drawable/checkbox_gou"/>
+    </item>
+    <item>
+        <bitmap android:src="@drawable/checkbox"
+            android:gravity="center"/>
+    </item>
+
+</layer-list>

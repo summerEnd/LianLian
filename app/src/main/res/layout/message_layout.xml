@@ -17,18 +17,23 @@
         >
 
         <com.lianlian.ui.widget.HomeTab
+            android:id="@+id/tab_msg_ll"
+            android:checked="true"
             style="@style/message_tab_title"
             android:text="恋恋"/>
 
         <com.lianlian.ui.widget.HomeTab
+            android:id="@+id/tab_msg_chumo"
             style="@style/message_tab_title"
             android:text="出没"/>
 
         <com.lianlian.ui.widget.HomeTab
+            android:id="@+id/tab_msg_liaotian"
             style="@style/message_tab_title"
             android:text="聊天"/>
 
         <com.lianlian.ui.widget.HomeTab
+            android:id="@+id/tab_msg_notice"
             style="@style/message_tab_title"
             android:text="通知"/>
     </com.sp.lib.widget.nav.title.PageStrip>

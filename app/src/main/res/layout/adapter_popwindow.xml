@@ -1,0 +1,77 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/id_popuWnd_line1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="vertical" >
+        <LinearLayout 
+            android:id="@+id/id_popuWnd_line2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/pic_choice_selector"
+            android:layout_marginLeft="35dip"
+            android:layout_marginRight="35dip"
+            android:paddingTop="10dip"
+            android:paddingBottom="10dip"
+            android:gravity="center"
+            >
+            	<ImageView 
+            	    android:id="@+id/id_popuWnd_line2_iv1"
+            	    android:layout_width="wrap_content"
+            	    android:layout_height="wrap_content"
+            	    android:background="@drawable/paizhao"
+            	    />
+	            <TextView 
+				    android:id="@+id/id_popuWnd_line2_tv1"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:text="拍照"
+				    android:layout_marginTop="2dip"
+				    android:layout_marginLeft="5dip"
+				    android:textColor="@color/mid_red"
+			    />
+        </LinearLayout>
+        
+        <LinearLayout 
+            android:id="@+id/id_popuWnd_line3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/pic_choice_selector"
+            android:layout_marginLeft="35dip"
+            android:layout_marginRight="35dip"
+            android:layout_marginTop="10dip"
+            android:paddingTop="10dip"
+            android:paddingBottom="10dip"
+            android:gravity="center"
+            android:layout_marginBottom="10dip"
+            >
+            	<ImageView 
+            	    android:id="@+id/id_popuWnd_line3_iv1"
+            	    android:layout_width="wrap_content"
+            	    android:layout_height="wrap_content"
+            	    android:background="@drawable/xiangce"
+            	    />
+	            <TextView 
+				    android:id="@+id/id_popuWnd_line3_tv1"
+				    android:layout_width="wrap_content"
+				    android:layout_height="wrap_content"
+				    android:text="选取相册图片"
+				    android:layout_marginTop="2dip"
+				    android:layout_marginLeft="5dip"
+				    android:textColor="@color/mid_red"
+			    />
+        </LinearLayout>
+		
+       
+    </LinearLayout>
+</LinearLayout>

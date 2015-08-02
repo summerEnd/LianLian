@@ -101,11 +101,14 @@
         <item name="android:textSize">@dimen/text_16</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
     </style>
 
     <style name="message_tab_title" parent="tab_title">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
+        <item name="android:paddingTop">@dimen/dimen_12</item>
+        <item name="android:paddingBottom">@dimen/dimen_12</item>
     </style>
 
     <style name="home_item_text">
@@ -147,6 +150,33 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:gravity">center</item>
         <item name="android:textColor">#ffffff</item>
-        <item name="android:textSize">20dp</item>
+        <item name="android:textSize">20sp</item>
     </style>
+
+    <style name="round_padding">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">@dimen/dimen_1</item>
+        <item name="android:paddingLeft">@dimen/dimen_4</item>
+        <item name="android:paddingRight">@dimen/dimen_4</item>
+        <item name="android:paddingTop">@dimen/dimen_1</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="invite_item_1">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:drawablePadding">@dimen/dimen_5</item>
+        <item name="android:textSize">@dimen/text_16</item>
+        <item name="android:drawableRight">@drawable/jump</item>
+    </style>
+
+
+    <style name="popWindow_anim_style" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/pop_up_in</item>
+        <item name="android:windowExitAnimation">@anim/pop_down_out</item>
+    </style>
+
 </resources>

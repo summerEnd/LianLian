@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center_vertical"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/catalog"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1.0"
+        android:background="@android:color/background_dark"
+        android:paddingBottom="5dip"
+        android:paddingLeft="5dip"
+        android:paddingTop="5dip"
+        android:text="A"
+        android:textColor="#454545"/>
+
+    <LinearLayout
+        android:id="@+id/id_line"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <com.lianlian.ui.widget.sideBar.RoundImageView
+            android:id="@+id/id_icon"
+            android:layout_width="30dip"
+            android:layout_height="30dip"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="20dip"
+            android:background="@drawable/ok"
+            />
+
+        <LinearLayout
+            android:id="@+id/id_line1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:id="@+id/id_line1_line1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginLeft="5dip"
+                    android:paddingTop="15dip"
+                    android:text="hhhh"
+                    android:textColor="@color/white"/>
+
+                <ImageView
+                    android:id="@+id/id_line1_line1_iv1"
+                    android:layout_width="10dip"
+                    android:layout_height="10dip"
+                    android:layout_marginLeft="3dip"
+                    android:layout_marginTop="20dip"
+                    android:background="@drawable/pos"
+
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/id_line1_line2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dip"
+                android:layout_marginLeft="5dip"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:id="@+id/id_line1_line2_tv1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/white_round_rect"
+                    android:text="传媒"
+                    android:textSize="10sp"
+                    />
+
+                <TextView
+                    android:id="@+id/id_line1_line2_tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dip"
+                    android:background="@drawable/white_round_rect"
+                    android:text="事业线"
+                    android:textSize="10sp"
+                    />
+
+                <ImageView
+                    android:id="@+id/id_line1_line2_iv1"
+                    android:layout_width="10dip"
+                    android:layout_height="10dip"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginTop="5dip"
+                    android:background="@drawable/show"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

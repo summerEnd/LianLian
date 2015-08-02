@@ -1,0 +1,83 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lianlian.ui.main.home.FoundFragment">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dimen_5"
+        android:paddingRight="@dimen/dimen_5"
+        >
+
+        <com.sp.lib.widget.pager.BannerPager
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_160"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/meet_item_space"
+            android:orientation="horizontal">
+
+            <com.lianlian.ui.widget.HomeItem
+                android:id="@+id/rank_face"
+                style="@style/home_item_left_style"
+                app:home_item_icon="@drawable/rank_face"
+                app:home_item_title="颜值榜"/>
+
+            <com.lianlian.ui.widget.HomeItem
+                android:id="@+id/rank_hot"
+                style="@style/home_item_right_style"
+                app:home_item_icon="@drawable/rank_hot"
+                app:home_item_title="人气榜"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/meet_item_space"
+            android:orientation="horizontal">
+
+            <com.lianlian.ui.widget.HomeItem
+                android:id="@+id/rank_money"
+
+                style="@style/home_item_left_style"
+                app:home_item_icon="@drawable/rank_money"
+                app:home_item_title="打赏榜"/>
+
+            <com.lianlian.ui.widget.HomeItem
+                android:id="@+id/rank_hao"
+
+                style="@style/home_item_right_style"
+                app:home_item_icon="@drawable/rank_hao"
+                app:home_item_title="土豪榜"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/meet_item_space"
+            android:orientation="horizontal">
+
+            <com.lianlian.ui.widget.HomeItem
+                android:id="@+id/rank_meet"
+                style="@style/home_item_left_style"
+                app:home_item_icon="@drawable/rank_meet"
+                app:home_item_title="遇见"/>
+
+            <com.lianlian.ui.widget.HomeItem
+                android:id="@+id/rank_show"
+                style="@style/home_item_right_style"
+                app:home_item_icon="@drawable/rank_show"
+                app:home_item_title="出没"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+

@@ -1,83 +1,138 @@
-<ScrollView
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.lianlian.ui.home.MeetFragment">
+    android:paddingLeft="@dimen/dimen_10"
+    android:paddingRight="@dimen/dimen_10"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/dimen_10"
+        android:layout_marginTop="@dimen/dimen_10"
+        android:text="在爱运动的世界里，TA——等你约。"
+        android:textColor="@color/gray92"
+        android:textSize="@dimen/text_16"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/register_bg"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/micro_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/micro_phone"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6分"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/text_15"/>
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_6"
+            android:layout_marginRight="@dimen/dimen_6"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/meet_home"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image"
+            android:gravity="center_vertical"
+            android:id="@+id/layout_label"
+            android:orientation="horizontal"
+            android:background="#ffffff"
+            android:paddingLeft="@dimen/dimen_10"
+            android:paddingRight="@dimen/dimen_10"
+            android:paddingBottom="@dimen/dimen_10"
+            android:paddingTop="@dimen/dimen_10">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="王大丫"
+                android:textColor="@color/gray92"
+                android:textSize="@dimen/text_16"/>
+
+            <TextView
+                style="@style/round_padding"
+                android:layout_marginLeft="@dimen/dimen_4"
+                android:background="@drawable/gray_round_rect"
+                android:text="传媒"
+                android:textColor="@color/gray92"/>
+
+            <TextView
+                style="@style/round_padding"
+                android:layout_marginLeft="@dimen/dimen_5"
+                android:background="@drawable/gray_round_rect"
+                android:text="事业线"
+                android:textColor="@color/gray92"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/gray92"
+                android:text="580m"/>
+        </LinearLayout>
+
+    </RelativeLayout>
 
     <LinearLayout
-
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingLeft="@dimen/dimen_5"
-        android:paddingRight="@dimen/dimen_5"
-        >
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_30"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-        <com.sp.lib.widget.pager.BannerPager
-            android:id="@+id/banner"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_160"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/meet_item_space"
-            android:orientation="horizontal">
+            android:src="@drawable/dissmiss_big"/>
 
-            <com.lianlian.ui.widget.HomeItem
-                android:id="@+id/rank_face"
-                style="@style/home_item_left_style"
-                app:home_item_icon="@drawable/rank_face"
-                app:home_item_title="颜值榜"/>
-
-            <com.lianlian.ui.widget.HomeItem
-                android:id="@+id/rank_hot"
-                style="@style/home_item_right_style"
-                app:home_item_icon="@drawable/rank_hot"
-                app:home_item_title="人气榜"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/meet_item_space"
-            android:orientation="horizontal">
+            android:layout_marginLeft="@dimen/dimen_25"
+            android:layout_marginRight="@dimen/dimen_25"
+            android:src="@drawable/yinxiang"/>
 
-            <com.lianlian.ui.widget.HomeItem
-                android:id="@+id/rank_money"
-
-                style="@style/home_item_left_style"
-                app:home_item_icon="@drawable/rank_money"
-                app:home_item_title="打赏榜"/>
-
-            <com.lianlian.ui.widget.HomeItem
-                android:id="@+id/rank_hao"
-
-                style="@style/home_item_right_style"
-                app:home_item_icon="@drawable/rank_hao"
-                app:home_item_title="土豪榜"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/meet_item_space"
-            android:orientation="horizontal">
+            android:src="@drawable/xiangyue"/>
 
-            <com.lianlian.ui.widget.HomeItem
-                android:id="@+id/rank_meet"
-                style="@style/home_item_left_style"
-                app:home_item_icon="@drawable/rank_meet"
-                app:home_item_title="遇见"/>
 
-            <com.lianlian.ui.widget.HomeItem
-                android:id="@+id/rank_show"
-                style="@style/home_item_right_style"
-                app:home_item_icon="@drawable/rank_show"
-                app:home_item_title="出没"/>
-        </LinearLayout>
     </LinearLayout>
-</ScrollView>
 
+
+</LinearLayout>

@@ -1,99 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.lianlian"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lianlian" >
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".AppDelegate"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <activity
-            android:name=".ui.MainActivity"
-            android:label="@string/app_name">
+            android:name=".ui.main.MainActivity"
+            android:label="@string/app_name" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".ui.login.LoginActivity"
-            android:label="@string/title_activity_login">
+            android:label="@string/title_activity_login" >
         </activity>
         <activity
             android:name=".ui.login.AddInfoActivity1"
-            android:label="@string/title_activity_add_info_activity1">
+            android:label="@string/title_activity_add_info_activity1" >
         </activity>
         <activity
             android:name=".ui.test.ActivityList"
-            android:label="@string/title_activity_activity_list">
+            android:label="@string/title_activity_activity_list" >
         </activity>
-        <activity android:name="com.sp.lib.activity.DEBUGActivity"/>
+        <activity android:name="com.sp.lib.activity.DEBUGActivity" />
         <activity
             android:name=".ui.login.AddInfoActivity2"
-            android:label="@string/title_activity_add_info_activity2">
+            android:label="@string/title_activity_add_info_activity2" >
         </activity>
         <activity
             android:name=".ui.login.AddInfoActivity3"
-            android:label="@string/title_activity_add_info_activity3">
+            android:label="@string/title_activity_add_info_activity3" >
         </activity>
         <activity
             android:name=".ui.login.RegisterActivity"
-            android:label="@string/title_activity_register">
+            android:label="@string/title_activity_register" >
         </activity>
         <activity
             android:name=".ui.login.ProtocolActivity"
-            android:label="@string/title_activity_protocol">
+            android:label="@string/title_activity_protocol" >
         </activity>
         <activity
             android:name=".HotActivity"
-            android:label="@string/title_activity_hot">
+            android:label="@string/title_activity_hot" >
         </activity>
         <activity
-            android:name=".ui.rank.RankActivity"
-            android:label="@string/title_activity_hot">
+            android:name=".ui.main.home.rank.RankActivity"
+            android:label="@string/title_activity_hot" >
         </activity>
         <activity
             android:name=".GuideActivity"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
-
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         </activity>
         <activity
-            android:name=".ui.rank.FaceRankActivity"
+            android:name=".ui.main.home.rank.FaceRankActivity"
             android:label="@string/title_activity_face_rank"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".ui.rank.HotRankActivity"
+            android:name=".ui.main.home.rank.HotRankActivity"
             android:label="@string/title_activity_hot_rank"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".ui.rank.PayRankActivity"
+            android:name=".ui.main.home.rank.PayRankActivity"
             android:label="@string/title_activity_pay_rank"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".ui.rank.TuhaoRankActivity"
+            android:name=".ui.main.home.rank.TuhaoRankActivity"
             android:label="@string/title_activity_tuhao_rank"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name=".ui.home.SendMsgActivity"
-            android:label="@string/title_activity_send_msg">
+            android:name=".ui.main.home.SendMsgActivity"
+            android:label="@string/title_activity_send_msg" >
         </activity>
-        <activity android:name=".ui.other.MessageActivity"/>
-        <activity android:name=".ui.other.SettingActivity"/>
-        <activity android:name=".ui.other.PrivacySettingActivity"/>
-        <activity android:name=".ui.other.NotificationSettingActivity"/>
-        <activity android:name=".ui.other.BindPhoneActivity"/>
-        <activity android:name=".ui.other.ModifyPasswordActivity"/>
-        <activity android:name=".ui.other.ResetPasswordAcrivity"/>
-        <activity android:name=".ui.other.ClauseActivity"/>
-        <activity android:name=".ui.other.FeedbackActivity"/>
+        <activity
+            android:name=".ui.other.message.MessageActivity"
+            android:label="消息中心" />
+        <activity
+            android:name=".ui.other.setting.SettingActivity"
+            android:label="设置" />
+        <activity
+            android:name=".ui.other.setting.PrivacySettingActivity"
+            android:label="个人设置" />
+        <activity
+            android:name=".ui.other.setting.NotificationSettingActivity"
+            android:label="通知设置" />
+        <activity
+            android:name=".ui.other.setting.BindPhoneActivity"
+            android:label="绑定手机" />
+        <activity
+            android:name=".ui.other.setting.ModifyPasswordActivity"
+            android:label="修改密码" />
+        <activity
+            android:name=".ui.other.setting.ResetPasswordAcrivity"
+            android:label="重置密码" />
+        <activity
+            android:name=".ui.other.setting.ClauseActivity"
+            android:label="原因" />
+        <activity
+            android:name=".ui.other.setting.FeedbackActivity"
+            android:label="建议反馈" />
+        <activity
+            android:name=".ui.main.me.edit.MyselfEditor"
+            android:label="编辑" >
+        </activity>
+
+        <!-- 录音画面 -->
+        <activity
+            android:name=".ui.main.me.edit.MyselfEditorRecord"
+            android:label="@string/app_name" >
+        </activity>
+
+        <!-- 运动场所主画面 -->
+        <activity
+            android:name=".ui.main.me.edit.MyselfEditorSPMain"
+            android:label="@string/app_name" >
+        </activity>
+
+        <!-- 运动场所挑选俱乐部 -->
+        <activity
+            android:name=".ui.main.me.edit.MyselfEditorSPFitness"
+            android:label="@string/app_name" >
+        </activity>
+
+        <!-- 创建运动场俱乐部 -->
+        <activity
+            android:name=".ui.main.me.edit.MyselfEditorSPFitnessCreate"
+            android:label="@string/app_name" >
+        </activity>
+
+        <!-- 运动诉求编辑 -->
+        <activity
+            android:name=".ui.main.me.edit.MyselfEditorSportsApeal"
+            android:label="@string/app_name" >
+        </activity>
+
+        <!-- 爱吃标签编辑 -->
+        <activity
+            android:name=".ui.main.me.edit.MyselfEditorLoveFood"
+            android:label="@string/app_name" >
+        </activity>
+
+        <!-- 创建爱吃标签 -->
+        <activity
+            android:name=".ui.main.me.edit.MyselfEditorLoveFoodCreate"
+            android:label="@string/app_name" >
+        </activity>
+
+        <!-- 旅行标签编辑 -->
+        <activity
+            android:name=".ui.main.me.edit.MyselfEditorTravel"
+            android:label="@string/app_name" >
+        </activity>
+
+        <!-- 创建旅行标签 -->
+        <activity
+            android:name=".ui.main.me.edit.MyselfEditorTravelCreate"
+            android:label="@string/app_name" >
+        </activity>
+
+        <!-- 运动标签编辑 -->
+        <activity
+            android:name=".ui.main.me.edit.MyselfEditorSports"
+            android:label="@string/app_name" >
+        </activity>
+
+        <!-- 创建运动标签 -->
+        <activity
+            android:name=".ui.main.me.edit.MyselfEditorSportsCreate"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".ui.main.plus.InviteFriends"
+            android:label="@string/title_activity_invite_friends" >
+        </activity>
+        <activity
+            android:name=".ui.main.plus.SendLianLian"
+            android:label="@string/title_activity_send_lian_lian" >
+        </activity>
+        <activity
+            android:name=".ui.main.plus.MeetActivity"
+            android:label="@string/title_activity_meet" >
+        </activity>
+        <activity android:name=".ui.main.home.SearchActivity"/>
     </application>
 
 </manifest>

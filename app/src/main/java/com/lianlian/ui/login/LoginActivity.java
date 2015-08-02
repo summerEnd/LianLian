@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.lianlian.R;
 import com.lianlian.ui.BaseActivity;
-import com.lianlian.ui.MainActivity;
+import com.lianlian.ui.main.MainActivity;
 
 public class LoginActivity extends BaseActivity {
 

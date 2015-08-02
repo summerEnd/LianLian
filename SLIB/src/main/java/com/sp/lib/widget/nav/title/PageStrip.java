@@ -51,7 +51,7 @@ public class PageStrip extends LinearLayout implements ViewPager.OnPageChangeLis
      */
     private OnTabClick onTabClick = new OnTabClick();
 
-    OnTitleChangeListener mOnTitleChangeListener;
+    onTabChangeListener mOnTabChangeListener;
 
     private ViewPager.OnPageChangeListener mOnPageChangeListener;
 
@@ -84,9 +84,8 @@ public class PageStrip extends LinearLayout implements ViewPager.OnPageChangeLis
         setOrientation(LinearLayout.HORIZONTAL);
     }
 
-    public PageStrip setOnTitleChangeListener(OnTitleChangeListener l) {
-        this.mOnTitleChangeListener = l;
-        return this;
+    public void setTabListener(onTabChangeListener l) {
+        this.mOnTabChangeListener = l;
     }
 
     @Override
@@ -115,7 +114,14 @@ public class PageStrip extends LinearLayout implements ViewPager.OnPageChangeLis
     @Override
     protected void dispatchDraw(@NonNull Canvas canvas) {
         super.dispatchDraw(canvas);
-        indicatorDrawable.draw(canvas);
+        if (selectedTab != null) {
+            if (mPager == null) {
+                View v = selectedTab.getView();
+                indicatorDrawable.setBounds(v.getLeft(), v.getBottom() - indicatorHeight, v.getRight(), v.getBottom());
+            }
+            indicatorDrawable.draw(canvas);
+        }
+
     }
 
     /**
@@ -202,15 +208,14 @@ public class PageStrip extends LinearLayout implements ViewPager.OnPageChangeLis
         if (mPager != null) {
             mPager.setCurrentItem(position);
         } else {
-            if (mOnTitleChangeListener != null) {
-                mOnTitleChangeListener.onSelected(position, tab);
+            if (mOnTabChangeListener != null) {
+                mOnTabChangeListener.onSelected(position, tab);
             }
-            View tabView = tab.getView();
-            indicatorDrawable.setBounds(tabView.getLeft(), tabView.getBottom() - indicatorHeight, tabView.getRight(), tabView.getBottom());
             adjustTabPosition();
             invalidate();
         }
     }
+
 
     private class OnTabClick implements OnClickListener {
         @Override
@@ -243,9 +248,8 @@ public class PageStrip extends LinearLayout implements ViewPager.OnPageChangeLis
         return tabs.size();
     }
 
-    public interface OnTitleChangeListener {
+    public interface onTabChangeListener {
         void onSelected(int position, ITab tab);
 
-        void onUnSelected(int position, ITab tab);
     }
 }

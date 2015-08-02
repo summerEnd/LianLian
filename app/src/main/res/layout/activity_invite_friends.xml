@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/id_lianlian_text1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dip"
+        android:layout_marginTop="8dip"
+        android:text="请选择邀请模板"
+        android:textColor="@color/gray92"
+        android:textSize="@dimen/text_14"
+        />
+
+    <LinearLayout
+        android:id="@+id/id_lianlian_line1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dip"
+        android:background="@color/base_bg_color"
+        android:orientation="horizontal"
+        >
+
+        <RelativeLayout
+            android:id="@+id/id_lianlian_line1_relative1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dip"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="10dip"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:id="@+id/id_lianlian_line1_relative1_iv1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/biaoqianone"
+                />
+
+            <CheckBox
+                android:id="@+id/id_lianlian_line1_relative1_cb1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/dimen_5"
+                android:layout_marginRight="@dimen/dimen_5"
+                android:button="@drawable/checkbox_inner"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/id_lianlian_line1_relative2"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dip"
+            android:layout_marginLeft="8dip"
+            android:layout_marginTop="10dip"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:id="@+id/id_lianlian_line1_relative2_iv1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/biaoqiantwo"
+                />
+
+            <CheckBox
+                android:id="@+id/id_lianlian_line1_relative2_cb1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dip"
+                android:layout_marginTop="5dip"
+                android:button="@drawable/checkbox_inner"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/id_lianlian_line1_relative3"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dip"
+            android:layout_marginLeft="8dip"
+            android:layout_marginRight="8dip"
+            android:layout_marginTop="10dip"
+            android:layout_weight="1"
+            >
+
+            <ImageView
+                android:id="@+id/id_lianlian_line1_relative3_iv1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/biaoqianthree"
+                />
+
+            <CheckBox
+                android:id="@+id/id_lianlian_line1_relative3_cb1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dip"
+                android:layout_marginTop="5dip"
+                android:button="@drawable/checkbox_inner"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:id="@+id/id_lianlian_line2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dip"
+        android:background="@color/base_bg_color"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_4"
+        app:dividerPadding="1dp"
+        app:divider="@drawable/div_horizontal"
+        app:showDividers="middle"
+        >
+
+        <TextView
+            style="@style/invite_item_1"
+            android:drawableLeft="@drawable/weixin"
+            android:text="邀请微信好友"/>
+
+
+        <TextView
+            android:layout_marginTop="@dimen/dimen_6"
+            android:layout_marginBottom="@dimen/dimen_6"
+            style="@style/invite_item_1"
+            android:drawableLeft="@drawable/qq"
+            android:text="邀请QQ好友"/>
+
+        <TextView
+            style="@style/invite_item_1"
+            android:drawableLeft="@drawable/phone"
+            android:text="邀请手机联系人"/>
+
+
+    </android.support.v7.widget.LinearLayoutCompat>
+
+
+</LinearLayout>
