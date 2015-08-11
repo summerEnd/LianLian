@@ -181,14 +181,16 @@
     </style>
 
     <style name="editor_item">
+        <item name="android:onClick">onClick</item>
+        <item name="android:clickable">true</item>
         <item name="android:paddingLeft">@dimen/dimen_10</item>
         <item name="android:paddingRight">@dimen/dimen_10</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingTop">@dimen/dimen_15</item>
-        <item name="android:paddingBottom">@dimen/dimen_15</item>
+        <item name="android:paddingTop">@dimen/dimen_8</item>
+        <item name="android:paddingBottom">@dimen/dimen_8</item>
         <item name="android:gravity">center_vertical</item>
-        <item name="android:background">@drawable/layoutbg</item>
+        <item name="android:background">#1e2228</item>
         <item name="android:orientation">horizontal</item>
     </style>
 
@@ -196,7 +198,13 @@
         <item name="android:layout_width">80dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">#ffffff</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">@dimen/text_14</item>
+    </style>
+
+    <style name="arrow">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/rightarrow_grey</item>
     </style>
 
 </resources>

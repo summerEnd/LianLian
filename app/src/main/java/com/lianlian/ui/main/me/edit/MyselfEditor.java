@@ -33,79 +33,53 @@ public class MyselfEditor extends BaseActivity {
         imageGridView = (ImageGridView) findViewById(R.id.gridLayout);
         initialImage = (ImageView) imageGridView.findViewById(R.id.initialImage);
         initialImage.setOnClickListener(onImageAddListener);
-        //		photolay = (LinearLayout) findViewById(R.id.myself_editor_photolay);
-        //		DisplayMetrics metric = new DisplayMetrics();
-        //        getWindowManager().getDefaultDisplay().getMetrics(metric);
-        //		int width = metric.widthPixels;
-        //		int height = width/2*3;
-        //		LinearLayout.LayoutParams llp = new LinearLayout.LayoutParams(width, height);
-        //		photolay.setLayoutParams(llp);
+    }
 
-        //		recordBtn.setOnClickListener(new OnClickListener() {
-        //
-        //			@Override
-        //			public void onClick(View view) {
-        //				Intent intent = new Intent();
-        //				intent.setClass(MyselfEditor.this, MyselfEditorRecord.class);
-        //				startActivity(intent);
-        //			}
-        //		});
-        //
-        //		sportvenuesBtn = (ImageView) findViewById(R.id.myself_editor_sportvenues_btn);
-        //		sportvenuesBtn.setOnClickListener(new OnClickListener() {
-        //
-        //			@Override
-        //			public void onClick(View view) {
-        //				Intent intent = new Intent();
-        //				intent.setClass(MyselfEditor.this, MyselfEditorSPMain.class);
-        //				startActivity(intent);
-        //			}
-        //		});
-        //
-        //		sportappealBtn = (ImageView) findViewById(R.id.myself_editor_sportappeal_btn);
-        //		sportappealBtn.setOnClickListener(new OnClickListener() {
-        //
-        //			@Override
-        //			public void onClick(View view) {
-        //				Intent intent = new Intent();
-        //				intent.setClass(MyselfEditor.this, MyselfEditorSportsApeal.class);
-        //				startActivity(intent);
-        //			}
-        //		});
-        //
-        //		lovefoodBtn = (ImageView) findViewById(R.id.myself_editor_lovefood_btn);
-        //		lovefoodBtn.setOnClickListener(new OnClickListener() {
-        //
-        //			@Override
-        //			public void onClick(View view) {
-        //				Intent intent = new Intent();
-        //				intent.setClass(MyselfEditor.this, MyselfEditorLoveFood.class);
-        //				startActivity(intent);
-        //			}
-        //		});
-        //
-        //		travelBtn = (ImageView) findViewById(R.id.myself_editor_travel_btn);
-        //		travelBtn.setOnClickListener(new OnClickListener() {
-        //
-        //			@Override
-        //			public void onClick(View view) {
-        //				Intent intent = new Intent();
-        //				intent.setClass(MyselfEditor.this, MyselfEditorTravel.class);
-        //				startActivity(intent);
-        //			}
-        //		});
-        //
-        //		sportsBtn = (ImageView) findViewById(R.id.myself_editor_sports_btn);
-        //		sportsBtn.setOnClickListener(new OnClickListener() {
-        //
-        //			@Override
-        //			public void onClick(View view) {
-        //				Intent intent = new Intent();
-        //				intent.setClass(MyselfEditor.this, MyselfEditorSports.class);
-        //				startActivity(intent);
-        //			}
-        //		});
+    @Override
+    public void onClick(View v) {
 
+        switch (v.getId()) {
+            case R.id.recordVoice: {
+                Intent intent = new Intent();
+                intent.setClass(MyselfEditor.this, MyselfEditorRecord.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.sportReasonLayout: {
+                Intent intent = new Intent();
+                intent.setClass(MyselfEditor.this, MyselfEditorSPMain.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.sportLayout: {
+
+                Intent intent = new Intent();
+                intent.setClass(MyselfEditor.this, MyselfEditorSports.class);
+                startActivity(intent);
+
+                break;
+            }
+            case R.id.eatLayout: {
+                Intent intent = new Intent();
+                intent.setClass(MyselfEditor.this, MyselfEditorLoveFood.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.visitLayout: {
+                Intent intent = new Intent();
+                intent.setClass(MyselfEditor.this, MyselfEditorTravel.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.sportRateLayout: {
+                Intent intent = new Intent();
+                intent.setClass(MyselfEditor.this, MyselfEditorSportsApeal.class);
+                startActivity(intent);
+                break;
+
+            }
+        }
+        super.onClick(v);
     }
 
     private void addImage(Bitmap bitmap) {

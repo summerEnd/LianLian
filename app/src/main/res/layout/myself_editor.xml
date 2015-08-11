@@ -37,20 +37,11 @@
 
         <LinearLayout
             android:id="@+id/recordVoice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/layoutbg"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            style="@style/editor_item">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
                 android:src="@drawable/myeditor_recording"/>
 
             <TextView
@@ -59,7 +50,7 @@
                 android:layout_marginRight="5dp"
                 android:text="录制声音"
                 android:textColor="#ffffff"
-                android:textSize="18sp"/>
+                android:textSize="@dimen/text_my_edit"/>
 
             <TextView
                 android:layout_width="0dp"
@@ -68,13 +59,10 @@
                 android:gravity="left"
                 android:text="(六秒钟捕获Ta的心)"
                 android:textColor="#919294"
-                android:textSize="18sp"/>
+                android:textSize="@dimen/text_my_edit"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:background="@drawable/rightarrow_grey"/>
+                style="@style/arrow"/>
         </LinearLayout>
 
         <TextView
@@ -86,7 +74,7 @@
             android:gravity="left"
             android:text="基本资料"
             android:textColor="#919294"
-            android:textSize="18sp"/>
+            android:textSize="@dimen/text_my_edit"/>
 
 
         <LinearLayout
@@ -97,13 +85,14 @@
                 android:text="性别"/>
 
             <TextView
+                android:id="@+id/tv_gender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:gravity="left|center_vertical"
                 android:text="男"
                 android:textColor="#ffffff"
-                android:textSize="18sp"/>
+                android:textSize="@dimen/text_my_edit"/>
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -114,14 +103,15 @@
 
 
         <LinearLayout
+            android:id="@+id/birthDayLayout"
             style="@style/editor_item">
 
             <TextView
-
                 style="@style/editor_key"
                 android:text="生日"/>
 
             <TextView
+                android:id="@+id/tv_birthday"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
@@ -129,26 +119,23 @@
                 android:gravity="left|center_vertical"
                 android:text="1995/09/25"
                 android:textColor="#fd1164"
-                android:textSize="18sp"/>
+                android:textSize="@dimen/text_my_edit"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:gravity="center"
-                android:src="@drawable/rightarrow_grey"/>
+                style="@style/arrow"/>
         </LinearLayout>
 
 
         <LinearLayout
+            android:id="@+id/xingzuoLayout"
             style="@style/editor_item">
 
             <TextView
                 style="@style/editor_key"
-
                 android:text="星座"/>
 
             <TextView
+                android:id="@+id/tv_xingzuo"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
@@ -156,18 +143,15 @@
                 android:gravity="right|center_vertical"
                 android:text="请选择你的所属星座"
                 android:textColor="#919294"
-                android:textSize="18sp"/>
+                android:textSize="@dimen/text_my_edit"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:gravity="center"
-                android:src="@drawable/rightarrow_grey"/>
+                style="@style/arrow"/>
         </LinearLayout>
 
 
         <LinearLayout
+            android:id="@+id/fromLayout"
             style="@style/editor_item">
 
             <TextView
@@ -176,6 +160,7 @@
                 android:text="来自"/>
 
             <TextView
+                android:id="@+id/tv_from"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
@@ -183,14 +168,10 @@
                 android:gravity="left|center_vertical"
                 android:text="北京/朝阳/大望路"
                 android:textColor="#fd1164"
-                android:textSize="18sp"/>
+                android:textSize="@dimen/text_my_edit"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:gravity="center"
-                android:src="@drawable/rightarrow_grey"/>
+                style="@style/arrow"/>
         </LinearLayout>
 
 
@@ -202,6 +183,7 @@
                 android:text="活跃范围"/>
 
             <EditText
+                android:id="@+id/edit_activity_area"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
@@ -211,11 +193,12 @@
                 android:paddingLeft="10dp"
                 android:text="双井，三里屯，国贸，太阳宫"
                 android:textColor="#fd1164"
-                android:textSize="18sp"/>
+                android:textSize="@dimen/text_my_edit"/>
         </LinearLayout>
 
 
         <LinearLayout
+            android:id="@+id/jobCircleLayout"
             style="@style/editor_item"
             android:layout_marginTop="@dimen/dimen_15">
 
@@ -241,18 +224,15 @@
                     android:paddingRight="10dp"
                     android:text="医疗"
                     android:textColor="#e24ba4"
-                    android:textSize="18sp"/>
+                    android:textSize="@dimen/text_my_edit"/>
             </LinearLayout>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:gravity="center"
-                android:src="@drawable/rightarrow_grey"/>
+                style="@style/arrow"/>
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/imageLayout"
             style="@style/editor_item">
 
             <TextView
@@ -277,15 +257,11 @@
                     android:paddingRight="10dp"
                     android:text="事业线"
                     android:textColor="#53b703"
-                    android:textSize="18sp"/>
+                    android:textSize="@dimen/text_my_edit"/>
             </LinearLayout>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:gravity="center"
-                android:src="@drawable/rightarrow_grey"/>
+                style="@style/arrow"/>
         </LinearLayout>
 
         <LinearLayout
@@ -298,16 +274,17 @@
                 android:text="职场圈子"/>
 
             <EditText
-                android:layout_marginTop="@dimen/dimen_5"
+                android:id="@+id/editJobCircle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_5"
                 android:background="@drawable/btnbg_black"
                 android:gravity="left|center_vertical"
                 android:hint="可输入3-20字"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:textColor="#fd1164"
-                android:textSize="18sp"/>
+                android:textSize="@dimen/text_my_edit"/>
         </LinearLayout>
 
         <TextView
@@ -319,10 +296,11 @@
             android:gravity="left"
             android:text="运动偏好"
             android:textColor="#919294"
-            android:textSize="18sp"/>
+            android:textSize="@dimen/text_my_edit"/>
 
 
         <LinearLayout
+            android:id="@+id/sportRateLayout"
             style="@style/editor_item">
 
             <TextView
@@ -347,19 +325,16 @@
                     android:paddingRight="10dp"
                     android:text="每个月总有那么几天"
                     android:textColor="#fd1164"
-                    android:textSize="18sp"/>
+                    android:textSize="@dimen/text_my_edit"/>
             </LinearLayout>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:gravity="center"
-                android:src="@drawable/rightarrow_grey"/>
+                style="@style/arrow"/>
         </LinearLayout>
 
 
         <LinearLayout
+            android:id="@+id/sportReasonLayout"
             style="@style/editor_item">
 
             <TextView
@@ -384,7 +359,7 @@
                     android:paddingRight="10dp"
                     android:text="我要瘦小腿"
                     android:textColor="#c2ad96"
-                    android:textSize="18sp"/>
+                    android:textSize="@dimen/text_my_edit"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -396,21 +371,17 @@
                     android:paddingRight="10dp"
                     android:text="强壮体魄"
                     android:textColor="#c2ad96"
-                    android:textSize="18sp"/>
+                    android:textSize="@dimen/text_my_edit"/>
 
 
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/myself_editor_sportappeal_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:gravity="center"
-                android:src="@drawable/rightarrow_grey"/>
+                style="@style/arrow"/>
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/sportHouse"
             style="@style/editor_item">
 
             <TextView
@@ -435,16 +406,11 @@
                     android:paddingRight="10dp"
                     android:text="美菲特健身中心"
                     android:textColor="#c490bf"
-                    android:textSize="18sp"/>
+                    android:textSize="@dimen/text_my_edit"/>
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/myself_editor_sportvenues_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:gravity="center"
-                android:src="@drawable/rightarrow_grey"/>
+                style="@style/arrow"/>
         </LinearLayout>
 
         <TextView
@@ -456,10 +422,11 @@
             android:gravity="left"
             android:text="我的兴趣"
             android:textColor="#919294"
-            android:textSize="18sp"/>
+            android:textSize="@dimen/text_my_edit"/>
 
 
         <LinearLayout
+            android:id="@+id/sportLayout"
             style="@style/editor_item">
 
             <TextView
@@ -484,33 +451,17 @@
                     android:paddingRight="10dp"
                     android:text="单车"
                     android:textColor="#81cce3"
-                    android:textSize="18sp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:background="@drawable/btnbg_blue"
-                    android:gravity="center"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:text="暴走"
-                    android:textColor="#81cce3"
-                    android:textSize="18sp"/>
+                    android:textSize="@dimen/text_my_edit"/>
 
 
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/myself_editor_sports_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:gravity="center"
-                android:src="@drawable/rightarrow_grey"/>
+                style="@style/arrow"/>
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/eatLayout"
             style="@style/editor_item">
 
             <TextView
@@ -535,19 +486,15 @@
                     android:paddingRight="10dp"
                     android:text="牛排"
                     android:textColor="#fdbe67"
-                    android:textSize="18sp"/>
+                    android:textSize="@dimen/text_my_edit"/>
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/myself_editor_lovefood_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:gravity="center"
-                android:src="@drawable/rightarrow_grey"/>
+                style="@style/arrow"/>
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/visitLayout"
             style="@style/editor_item">
 
             <TextView
@@ -572,16 +519,11 @@
                     android:paddingRight="10dp"
                     android:text="三亚"
                     android:textColor="#afe6c8"
-                    android:textSize="18sp"/>
+                    android:textSize="@dimen/text_my_edit"/>
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/myself_editor_travel_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:gravity="center"
-                android:src="@drawable/rightarrow_grey"/>
+                style="@style/arrow"/>
         </LinearLayout>
 
         <TextView
