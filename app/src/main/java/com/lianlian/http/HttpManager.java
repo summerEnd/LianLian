@@ -41,7 +41,23 @@ public class HttpManager {
     }
 
     /**
-     * @param request request的url可以传完整的链接，也可以传除host以外的部分，程序会自动补全host
+     * 发送get请求
+     */
+    public RequestHandle get(Context context, SRequest request, ResponseHandlerInterface handler) {
+        debug(request);
+
+        if (context == null) {
+            context = AppDelegate.getInstance();
+        }
+        String url = request.getUrl();
+        if (TextUtils.isEmpty(url)) {
+            return null;
+        }
+        return client.get(context, url, request, handler);
+    }
+
+    /**
+     * 发送get请求
      */
     public RequestHandle post(Context context, SRequest request, ResponseHandlerInterface handler) {
         debug(request);
@@ -55,7 +71,6 @@ public class HttpManager {
         }
         return client.post(context, url, request, handler);
     }
-
 
     //修复url
     private void debug(SRequest request) {

@@ -4,16 +4,9 @@ import android.app.Activity;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.util.SparseArray;
 
 import com.lianlian.R;
-import com.lianlian.ui.main.chumo.ChumoFragment;
-import com.lianlian.ui.main.home.HomeFragment;
-import com.lianlian.ui.main.lian.LianFragment;
-import com.lianlian.ui.main.me.MeFragment;
-
-import java.util.List;
 
 /**
  * Created by Lincoln on 15/7/21.

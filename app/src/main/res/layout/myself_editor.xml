@@ -1,109 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" >
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <LinearLayout
+    <android.support.v7.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#13161b"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        app:divider="@drawable/div_horizontal"
+        app:showDividers="middle">
 
-        <!-- vertical -->
-
-        <LinearLayout
-            android:id="@+id/myself_editor_photolay"
+        <com.lianlian.ui.widget.ImageGridView
+            android:id="@+id/gridLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/layoutbg"
-            android:orientation="vertical" >
+            android:paddingBottom="@dimen/dimen_20"
+            app:space="5dp"
+            app:totalColumn="3"
+            app:totalRows="auto">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/initialImage"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                android:src="@drawable/person6"
+                app:column="0"
+                app:column_span="2"
+                app:row="0"
+                app:row_span="2"/>
 
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="5dp"
-                    android:layout_weight="2"
-                    android:layout_marginRight="2dp"
-                    android:layout_marginBottom="2dp"
-                    android:gravity="center"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/person1" />
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical" >
+        </com.lianlian.ui.widget.ImageGridView>
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_marginBottom="2dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/person2" />
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:layout_marginBottom="2dp"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/person3" />
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:orientation="horizontal" >
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:scaleType="fitXY"
-                    android:layout_marginRight="2dp"
-                    android:src="@drawable/person4" />
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:layout_marginRight="2dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/person5" />
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/person6" />
-            </LinearLayout>
-        </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/recordVoice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:background="@drawable/layoutbg"
             android:gravity="center_vertical"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -113,7 +51,7 @@
                 android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
-                android:src="@drawable/myeditor_recording" />
+                android:src="@drawable/myeditor_recording"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -121,24 +59,22 @@
                 android:layout_marginRight="5dp"
                 android:text="录制声音"
                 android:textColor="#ffffff"
-                android:textSize="18sp" />
+                android:textSize="18sp"/>
 
             <TextView
-                android:id="@+id/textView2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="left"
                 android:text="(六秒钟捕获Ta的心)"
                 android:textColor="#919294"
-                android:textSize="18sp" />
+                android:textSize="18sp"/>
 
             <ImageView
-                android:id="@+id/myself_editor_recording_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
-                android:background="@drawable/rightarrow_grey" />
+                android:background="@drawable/rightarrow_grey"/>
         </LinearLayout>
 
         <TextView
@@ -150,342 +86,228 @@
             android:gravity="left"
             android:text="基本资料"
             android:textColor="#919294"
-            android:textSize="18sp" />
+            android:textSize="18sp"/>
+
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/layoutbg"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:gravity="center_vertical"
-            android:orientation="vertical" >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="5dp"
-                    android:text="性别"
-                    android:textColor="#ffffff"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:gravity="left|center_vertical"
-                    android:text="男"
-                    android:textColor="#ffffff"
-                    android:textSize="18sp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:src="@drawable/sign_man" />
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:background="#344850" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="5dp"
-                    android:text="生日"
-                    android:textColor="#ffffff"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1"
-                    android:gravity="left|center_vertical"
-                    android:text="1995/09/25"
-                    android:textColor="#fd1164"
-                    android:textSize="18sp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
-                    android:gravity="center"
-                    android:src="@drawable/rightarrow_grey" />
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:background="#344850" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="5dp"
-                    android:text="星座"
-                    android:textColor="#ffffff"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1"
-                    android:gravity="right|center_vertical"
-                    android:text="请选择你的所属星座"
-                    android:textColor="#919294"
-                    android:textSize="18sp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
-                    android:gravity="center"
-                    android:src="@drawable/rightarrow_grey" />
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:background="#344850" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="5dp"
-                    android:text="来自"
-                    android:textColor="#ffffff"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1"
-                    android:gravity="left|center_vertical"
-                    android:text="北京/朝阳/大望路"
-                    android:textColor="#fd1164"
-                    android:textSize="18sp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
-                    android:gravity="center"
-                    android:src="@drawable/rightarrow_grey" />
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:background="#344850" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="5dp"
-                    android:text="活跃范围"
-                    android:textColor="#ffffff"
-                    android:textSize="18sp" />
-
-                <EditText
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/btnbg_black"
-                    android:gravity="left|center_vertical"
-                    android:paddingLeft="10dp"
-                    android:text="双井，三里屯，国贸，太阳宫"
-                    android:textColor="#fd1164"
-                    android:textSize="18sp" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/layoutbg"
-            android:gravity="center_vertical"
-            android:orientation="vertical" >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="5dp"
-                    android:text="职场圈子"
-                    android:textColor="#ffffff"
-                    android:textSize="18sp" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="70dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal" >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="5dp"
-                        android:background="@drawable/btnbg_pink"
-                        android:gravity="center"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="医疗"
-                        android:textColor="#e24ba4"
-                        android:textSize="18sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
-                    android:gravity="center"
-                    android:src="@drawable/rightarrow_grey" />
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:background="#344850" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="5dp"
-                    android:text="形象标签"
-                    android:textColor="#ffffff"
-                    android:textSize="18sp" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="70dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal" >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="5dp"
-                        android:background="@drawable/btnbg_green"
-                        android:gravity="center"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="事业线"
-                        android:textColor="#53b703"
-                        android:textSize="18sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
-                    android:gravity="center"
-                    android:src="@drawable/rightarrow_grey" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/layoutbg"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:gravity="center_vertical"
-            android:orientation="vertical" >
+            style="@style/editor_item">
 
             <TextView
-                android:layout_width="80dp"
+                style="@style/editor_key"
+                android:text="性别"/>
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
                 android:layout_marginRight="5dp"
-                android:layout_marginTop="20dp"
-                android:text="职场圈子"
+                android:gravity="left|center_vertical"
+                android:text="男"
                 android:textColor="#ffffff"
-                android:textSize="18sp" />
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:src="@drawable/sign_man"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            style="@style/editor_item">
+
+            <TextView
+
+                style="@style/editor_key"
+                android:text="生日"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:gravity="left|center_vertical"
+                android:text="1995/09/25"
+                android:textColor="#fd1164"
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:gravity="center"
+                android:src="@drawable/rightarrow_grey"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            style="@style/editor_item">
+
+            <TextView
+                style="@style/editor_key"
+
+                android:text="星座"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical"
+                android:text="请选择你的所属星座"
+                android:textColor="#919294"
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:gravity="center"
+                android:src="@drawable/rightarrow_grey"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            style="@style/editor_item">
+
+            <TextView
+                style="@style/editor_key"
+                android:layout_height="wrap_content"
+                android:text="来自"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:gravity="left|center_vertical"
+                android:text="北京/朝阳/大望路"
+                android:textColor="#fd1164"
+                android:textSize="18sp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:gravity="center"
+                android:src="@drawable/rightarrow_grey"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            style="@style/editor_item">
+
+            <TextView
+                style="@style/editor_key"
+                android:text="活跃范围"/>
 
             <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/btnbg_black"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="10dp"
+                android:text="双井，三里屯，国贸，太阳宫"
+                android:textColor="#fd1164"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            style="@style/editor_item"
+            android:layout_marginTop="@dimen/dimen_15">
+
+            <TextView
+                style="@style/editor_key"
+                android:text="职场圈子"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/btnbg_pink"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="医疗"
+                    android:textColor="#e24ba4"
+                    android:textSize="18sp"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:gravity="center"
+                android:src="@drawable/rightarrow_grey"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/editor_item">
+
+            <TextView
+                style="@style/editor_key"
+                android:text="形象标签"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/btnbg_green"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="事业线"
+                    android:textColor="#53b703"
+                    android:textSize="18sp"/>
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:gravity="center"
+                android:src="@drawable/rightarrow_grey"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/editor_item"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/editor_key"
+                android:text="职场圈子"/>
+
+            <EditText
+                android:layout_marginTop="@dimen/dimen_5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="5dp"
-                android:layout_marginTop="15dp"
                 android:background="@drawable/btnbg_black"
                 android:gravity="left|center_vertical"
                 android:hint="可输入3-20字"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:textColor="#fd1164"
-                android:textSize="18sp" />
+                android:textSize="18sp"/>
         </LinearLayout>
 
         <TextView
@@ -497,185 +319,132 @@
             android:gravity="left"
             android:text="运动偏好"
             android:textColor="#919294"
-            android:textSize="18sp" />
+            android:textSize="18sp"/>
+
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/layoutbg"
-            android:gravity="center_vertical"
-            android:orientation="vertical" >
+            style="@style/editor_item">
+
+            <TextView
+                style="@style/editor_key"
+                android:layout_width="wrap_content"
+                android:text="平均运动频率"/>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="20dp"
-                    android:text="平均运动频率"
-                    android:textColor="#ffffff"
-                    android:textSize="18sp" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="70dp"
                     android:layout_marginRight="5dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal" >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="5dp"
-                        android:gravity="center"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="每个月总有那么几天"
-                        android:textColor="#fd1164"
-                        android:textSize="18sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
                     android:gravity="center"
-                    android:src="@drawable/rightarrow_grey" />
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="每个月总有那么几天"
+                    android:textColor="#fd1164"
+                    android:textSize="18sp"/>
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="15dp"
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
-                android:background="#344850" />
+                android:gravity="center"
+                android:src="@drawable/rightarrow_grey"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            style="@style/editor_item">
+
+            <TextView
+                style="@style/editor_key"
+                android:text="运动诉求"/>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="5dp"
-                    android:text="运动诉求"
-                    android:textColor="#ffffff"
-                    android:textSize="18sp" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="70dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal" >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="5dp"
-                        android:background="@drawable/btnbg_coffee"
-                        android:gravity="center"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="我要瘦小腿"
-                        android:textColor="#c2ad96"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="5dp"
-                        android:background="@drawable/btnbg_coffee"
-                        android:gravity="center"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="强壮体魄"
-                        android:textColor="#c2ad96"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="5dp"
-                        android:background="@drawable/btnbg_coffee"
-                        android:gravity="center"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="翘翘臀"
-                        android:textColor="#c2ad96"
-                        android:textSize="18sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/myself_editor_sportappeal_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/btnbg_coffee"
                     android:gravity="center"
-                    android:src="@drawable/rightarrow_grey" />
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="我要瘦小腿"
+                    android:textColor="#c2ad96"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/btnbg_coffee"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="强壮体魄"
+                    android:textColor="#c2ad96"
+                    android:textSize="18sp"/>
+
+
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="15dp"
+            <ImageView
+                android:id="@+id/myself_editor_sportappeal_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
-                android:background="#344850" />
+                android:gravity="center"
+                android:src="@drawable/rightarrow_grey"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/editor_item">
+
+            <TextView
+                style="@style/editor_key"
+                android:text="运动场所"/>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="5dp"
-                    android:text="运动场所"
-                    android:textColor="#ffffff"
-                    android:textSize="18sp" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="70dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal" >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="5dp"
-                        android:background="@drawable/btnbg_purple"
-                        android:gravity="center"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="美菲特健身中心"
-                        android:textColor="#c490bf"
-                        android:textSize="18sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/myself_editor_sportvenues_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/btnbg_purple"
                     android:gravity="center"
-                    android:src="@drawable/rightarrow_grey" />
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="美菲特健身中心"
+                    android:textColor="#c490bf"
+                    android:textSize="18sp"/>
             </LinearLayout>
+
+            <ImageView
+                android:id="@+id/myself_editor_sportvenues_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:gravity="center"
+                android:src="@drawable/rightarrow_grey"/>
         </LinearLayout>
 
         <TextView
@@ -687,185 +456,132 @@
             android:gravity="left"
             android:text="我的兴趣"
             android:textColor="#919294"
-            android:textSize="18sp" />
+            android:textSize="18sp"/>
+
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/layoutbg"
-            android:gravity="center_vertical"
-            android:orientation="vertical" >
+            style="@style/editor_item">
+
+            <TextView
+                style="@style/editor_key"
+                android:text="运动"/>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="5dp"
-                    android:text="运动"
-                    android:textColor="#ffffff"
-                    android:textSize="18sp" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="70dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal" >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="5dp"
-                        android:background="@drawable/btnbg_blue"
-                        android:gravity="center"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="单车"
-                        android:textColor="#81cce3"
-                        android:textSize="18sp" />
-                    
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="5dp"
-                        android:background="@drawable/btnbg_blue"
-                        android:gravity="center"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="暴走"
-                        android:textColor="#81cce3"
-                        android:textSize="18sp" />
-                    
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="5dp"
-                        android:background="@drawable/btnbg_blue"
-                        android:gravity="center"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="健身房"
-                        android:textColor="#81cce3"
-                        android:textSize="18sp" />
-                    
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="5dp"
-                        android:background="@drawable/btnbg_blue"
-                        android:gravity="center"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="郊游"
-                        android:textColor="#81cce3"
-                        android:textSize="18sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/myself_editor_sports_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/btnbg_blue"
                     android:gravity="center"
-                    android:src="@drawable/rightarrow_grey" />
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="单车"
+                    android:textColor="#81cce3"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/btnbg_blue"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="暴走"
+                    android:textColor="#81cce3"
+                    android:textSize="18sp"/>
+
+
             </LinearLayout>
+
+            <ImageView
+                android:id="@+id/myself_editor_sports_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:gravity="center"
+                android:src="@drawable/rightarrow_grey"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/editor_item">
+
+            <TextView
+                style="@style/editor_key"
+                android:text="爱吃"/>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="5dp"
-                    android:text="爱吃"
-                    android:textColor="#ffffff"
-                    android:textSize="18sp" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="70dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal" >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="5dp"
-                        android:background="@drawable/btnbg_orange"
-                        android:gravity="center"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="牛排"
-                        android:textColor="#fdbe67"
-                        android:textSize="18sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/myself_editor_lovefood_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/btnbg_orange"
                     android:gravity="center"
-                    android:src="@drawable/rightarrow_grey" />
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="牛排"
+                    android:textColor="#fdbe67"
+                    android:textSize="18sp"/>
             </LinearLayout>
+
+            <ImageView
+                android:id="@+id/myself_editor_lovefood_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:gravity="center"
+                android:src="@drawable/rightarrow_grey"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/editor_item">
+
+            <TextView
+                style="@style/editor_key"
+                android:text="旅行"/>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:orientation="horizontal" >
+                android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="5dp"
-                    android:text="旅行"
-                    android:textColor="#ffffff"
-                    android:textSize="18sp" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="70dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal" >
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="5dp"
-                        android:background="@drawable/btnbg_lightgreen"
-                        android:gravity="center"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="三亚"
-                        android:textColor="#afe6c8"
-                        android:textSize="18sp" />
-                </LinearLayout>
-
-                <ImageView
-                    android:id="@+id/myself_editor_travel_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/btnbg_lightgreen"
                     android:gravity="center"
-                    android:src="@drawable/rightarrow_grey" />
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="三亚"
+                    android:textColor="#afe6c8"
+                    android:textSize="18sp"/>
             </LinearLayout>
+
+            <ImageView
+                android:id="@+id/myself_editor_travel_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:gravity="center"
+                android:src="@drawable/rightarrow_grey"/>
         </LinearLayout>
 
         <TextView
@@ -880,7 +596,7 @@
             android:paddingTop="15dp"
             android:text="创建"
             android:textColor="#ffffff"
-            android:textSize="18sp" />
-    </LinearLayout>
+            android:textSize="18sp"/>
+    </android.support.v7.widget.LinearLayoutCompat>
 
 </ScrollView>

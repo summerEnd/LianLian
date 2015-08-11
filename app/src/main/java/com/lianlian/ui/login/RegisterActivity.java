@@ -14,8 +14,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.lianlian.R;
+import com.lianlian.http.HttpHandler;
+import com.lianlian.http.HttpInterface;
+import com.lianlian.http.HttpManager;
+import com.lianlian.http.UserRequest;
 import com.lianlian.ui.BaseActivity;
 import com.lianlian.ui.widget.TimerButton;
+
+import org.apache.http.Header;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class RegisterActivity extends BaseActivity {
 
@@ -66,12 +74,42 @@ public class RegisterActivity extends BaseActivity {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_get_code: {
-                tvgetcode.start();
-                tvgetcode.setEnabled(false);
+                UserRequest request = new UserRequest(HttpInterface.MESSAGE);
+                request.put("phone", editphone.getText().toString());
+                request.put("type", "register");
+                HttpManager.getInstance().get(this, request, new HttpHandler() {
+                    @Override
+                    public void onResultOk(int statusCode, Header[] headers, JSONObject response) throws JSONException {
+                        tvgetcode.start();
+                        tvgetcode.setEnabled(false);
+                    }
+                });
+
                 break;
             }
             case R.id.register: {
-                startActivity(new Intent(this,AddInfoActivity1.class));
+
+                if (!cbprotocol.isChecked()){
+                    return;
+                }
+
+                UserRequest request = new UserRequest(HttpInterface.REGISTER);
+                request.put("phone", editphone.getText().toString());
+                request.put("code", editcode.getText().toString());
+                request.put("pwd", editpsw.getText().toString());
+                HttpManager.getInstance().get(this, request, new HttpHandler() {
+                    @Override
+                    public void onResultOk(int statusCode, Header[] headers, JSONObject response) throws JSONException {
+                        startActivity(new Intent(RegisterActivity.this, AddInfoActivity1.class));
+                    }
+
+                    @Override
+                    public void onResultError(int statusCOde, Header[] headers, JSONObject response) throws JSONException {
+                        super.onResultError(statusCOde, headers, response);
+                        //todo test
+                        startActivity(new Intent(RegisterActivity.this, AddInfoActivity1.class));
+                    }
+                });
                 break;
             }
         }

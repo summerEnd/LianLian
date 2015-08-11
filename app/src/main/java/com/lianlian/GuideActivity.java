@@ -2,15 +2,17 @@ package com.lianlian;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v4.view.ViewPager;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 
-import com.lianlian.ui.BaseActivity;
 import com.lianlian.ui.login.LoginActivity;
 import com.sp.lib.common.support.adapter.GuidePagerAdapter;
 
 
 public class GuideActivity extends Activity {
+
+    public static final String IS_FIRST = "is_first";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,14 @@ public class GuideActivity extends Activity {
         final ViewPager pager = new ViewPager(this);
         setContentView(pager);
         pager.setAdapter(new GuidePagerAdapter(this, new int[]{R.drawable.g1, R.drawable.g2, R.drawable.g3, R.drawable.g4}));
+        SharedPreferences sp = getPreferences(MODE_PRIVATE);
+        boolean is_first = sp.getBoolean(IS_FIRST, true);
+
+        if (!is_first) {
+            exitGuide();
+            return;
+        }
+
         //监听滑动事件
         pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             private boolean exit;
@@ -39,11 +49,17 @@ public class GuideActivity extends Activity {
             public void onPageScrollStateChanged(int state) {
                 if (state == ViewPager.SCROLL_STATE_IDLE && exit) {
                     //滑动结束，根据exit判断是否可以结束
-                    startActivity(new Intent(GuideActivity.this, LoginActivity.class));
+                    exitGuide();
                 }
             }
         });
     }
 
+    private void exitGuide() {
+        SharedPreferences sp=getPreferences(MODE_PRIVATE);
+        sp.edit().putBoolean(IS_FIRST,false).apply();
+        startActivity(new Intent(GuideActivity.this, LoginActivity.class));
+        finish();
+    }
 
 }

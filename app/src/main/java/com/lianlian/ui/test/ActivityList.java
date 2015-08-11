@@ -1,12 +1,7 @@
 package com.lianlian.ui.test;
 
 import android.app.Activity;
-import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
-import com.lianlian.R;
 import com.lianlian.ui.login.AddInfoActivity1;
 import com.lianlian.ui.login.AddInfoActivity2;
 import com.lianlian.ui.login.RegisterActivity;

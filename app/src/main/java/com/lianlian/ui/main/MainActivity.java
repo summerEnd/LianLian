@@ -12,9 +12,9 @@ import com.lianlian.ui.BaseActivity;
 import com.lianlian.ui.main.chumo.ChumoFragment;
 import com.lianlian.ui.main.home.HomeFragment;
 import com.lianlian.ui.main.home.ReceiveFriends;
-import com.lianlian.ui.main.plus.PlusActionChooser;
 import com.lianlian.ui.main.lian.LianFragment;
 import com.lianlian.ui.main.me.MeFragment;
+import com.lianlian.ui.main.plus.PlusActionChooser;
 import com.lianlian.utils.FragmentSwitcher;
 
 

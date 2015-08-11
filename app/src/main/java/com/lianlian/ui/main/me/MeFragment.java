@@ -1,9 +1,9 @@
 package com.lianlian.ui.main.me;
 
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import com.lianlian.R;
 import com.lianlian.ui.BaseFragment;
 import com.lianlian.ui.main.me.edit.MyselfEditor;
-import com.lianlian.ui.other.setting.SettingActivity;
+import com.lianlian.ui.setting.SettingActivity;
 
 /**
  * A simple {@link Fragment} subclass.

@@ -5,7 +5,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.widget.TextView;
 
-
 import com.lianlian.R;
 
 import java.util.Vector;

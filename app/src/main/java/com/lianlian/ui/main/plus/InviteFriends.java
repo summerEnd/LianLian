@@ -1,9 +1,6 @@
 package com.lianlian.ui.main.plus;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import com.lianlian.R;
 import com.lianlian.ui.BaseActivity;

@@ -4,116 +4,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-  >
+    >
 
 
     <LinearLayout
-        android:id="@+id/id_lianlian_line1"
         android:layout_width="fill_parent"
-        android:layout_height="0dip"
+        android:layout_height="wrap_content"
         android:layout_marginTop="10dip"
-        android:layout_weight="2"
         android:background="@color/mid_black"
         android:orientation="horizontal"
+        android:padding="@dimen/dimen_7"
         >
 
-        <RelativeLayout
-            android:id="@+id/id_lianlian_line1_relative1"
-            android:layout_width="0dip"
-            android:layout_height="fill_parent"
-            android:layout_marginBottom="10dip"
-            android:layout_marginLeft="10dip"
-            android:layout_marginTop="10dip"
+
+        <ImageView
+            android:id="@+id/addImage"
+            android:layout_width="9dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dimen_7"
             android:layout_weight="1"
-            android:background="@color/black51"
-            android:gravity="center"
-            >
-
-            <RelativeLayout
-                android:id="@+id/id_lianlian_line1_relative2_relative1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                >
-
-                <ImageView
-                    android:id="@+id/id_lianlian_line1_relative1_iv1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="17dip"
-                    android:layout_marginTop="5dip"
-                    android:background="@drawable/add"
-
-                    />
-
-                <TextView
-                    android:id="@+id/id_lianlian_line1_tv1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/id_lianlian_line1_relative1_iv1"
-                    android:layout_marginLeft="5dip"
-                    android:text="添加照片"
-                    />
-            </RelativeLayout>
-
-            <ImageView
-                android:id="@+id/id_lianlian_line1_relative2_relative1_iv1"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:background="@drawable/ic_launcher"
-                android:visibility="gone"
-                />
-        </RelativeLayout>
+            android:background="@drawable/add_image_03"
+            />
 
         <RelativeLayout
-            android:id="@+id/id_lianlian_line1_relative2"
             android:layout_width="0dip"
             android:layout_height="fill_parent"
-            android:layout_margin="10dip"
             android:layout_weight="2"
             android:background="@color/black1c"
+            android:padding="@dimen/dimen_7"
             >
 
-            <LinearLayout
-                android:id="@+id/id_lianlian_line1_relative2_line1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
-
-                <Button
-                    android:id="@+id/id_lianlian_line1_relative2_line1_btn1"
-                    android:layout_width="28dip"
-                    android:layout_height="28dip"
-                    android:layout_marginLeft="10dip"
-                    android:layout_marginTop="3dip"
-                    android:background="@drawable/edit"
-                    />
-
-                <EditText
-                    android:id="@+id/id_lianlian_line1_ev1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dip"
-                    android:background="@drawable/edit_selector"
-                    android:editable="false"
-                    android:text="此刻的心情"
-                    android:textColor="@color/grayE9"
-                    android:textSize="@dimen/text_14"
-                    />
-            </LinearLayout>
 
             <EditText
-                android:id="@+id/id_lianlian_line1_relative2_et1"
-                android:layout_width="fill_parent"
+                android:id="@+id/editContent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/id_lianlian_line1_relative2_line1"
                 android:background="@drawable/edit_selector"
-                android:textColor="@android:color/white"
+                android:drawableLeft="@drawable/edit"
+                android:editable="false"
+                android:hint="此刻的心情"
+                android:textColor="@color/grayE9"
+                android:textSize="@dimen/text_14"
                 />
 
             <TextView
-                android:id="@+id/id_lianlian_line1_relative2_tv2"
+                android:id="@+id/textNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -129,7 +64,6 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/id_lianlian_line2"
         android:layout_width="fill_parent"
         android:layout_height="0dip"
         android:layout_weight="5"
@@ -137,7 +71,7 @@
         >
 
         <TextView
-            android:id="@+id/id_lianlian_line2_tv1"
+            android:id="@+id/recordTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dip"
@@ -148,7 +82,6 @@
             />
 
         <TextView
-            android:id="@+id/id_lianlian_line2_tv2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dip"
@@ -157,101 +90,12 @@
             android:textSize="@dimen/text_14"
             />
 
-        <LinearLayout
-            android:id="@+id/id_linelian4"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            >
-
-            <ImageView
-                android:id="@+id/id_linelian4_iv1"
-                android:layout_width="50dip"
-                android:layout_height="50dip"
-                android:layout_gravity="center"
-                android:layout_marginRight="30dip"
-                android:layout_marginTop="20dip"
-                android:background="@drawable/record_replay"
-                android:visibility="gone"
-                />
-
-            <ImageView
-                android:id="@+id/id_linelian4_iv2"
-                android:layout_width="100dip"
-                android:layout_height="100dip"
-                android:layout_marginTop="20dip"
-                android:background="@drawable/record_gray"
-                android:scaleType="centerInside"
-                />
-
-            <ImageView
-                android:id="@+id/id_linelian4_iv3"
-                android:layout_width="50dip"
-                android:layout_height="50dip"
-                android:layout_gravity="center"
-                android:layout_marginLeft="30dip"
-                android:layout_marginTop="20dip"
-                android:background="@drawable/play"
-                android:scaleType="centerInside"
-                android:visibility="gone"
-                />
-        </LinearLayout>
+        <com.lianlian.ui.widget.RecordView
+            android:id="@+id/recordView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
 
-        <RelativeLayout
-            android:id="@+id/id_lianlian_relative3"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dip"
-            android:gravity="center_horizontal"
-            >
-
-            <TextView
-                android:id="@+id/id_lianlian_line3_tv3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="10s"
-                android:textSize="20dip"
-                android:visibility="gone"
-                />
-
-            <FrameLayout
-                android:id="@+id/id_lianlian_framelayout1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                >
-
-                <ImageView
-                    android:id="@+id/id_lianlian_line3_iv1"
-                    android:layout_width="50dip"
-                    android:layout_height="50dip"
-                    android:background="@drawable/out"
-                    android:scaleType="centerInside"
-                    />
-
-                <TextView
-                    android:id="@+id/id_lianlian_framelayout1_tv1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="3dip"
-                    android:layout_marginTop="10dip"
-                    android:text="发布"
-                    android:textColor="@color/title_text_red_color"
-                    android:textSize="20dip"
-                    />
-            </FrameLayout>
-
-        </RelativeLayout>
-
-        <Button
-            android:id="@+id/id_lianlian_test_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="50dip"
-            android:layout_marginLeft="5dip"
-            android:text="切换"
-            />
     </LinearLayout>
 
 

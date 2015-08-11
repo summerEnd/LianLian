@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-
 import com.lianlian.R;
 import com.lianlian.ui.main.me.edit.MyselfEditorSPMain;
 

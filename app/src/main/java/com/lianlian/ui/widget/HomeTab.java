@@ -4,7 +4,6 @@ import android.content.Context;
 import android.util.AttributeSet;
 
 import com.lianlian.R;
-import com.sp.lib.widget.nav.SimpleTab;
 import com.sp.lib.widget.nav.title.TextPageTab;
 
 /**

@@ -30,6 +30,7 @@
 
         <EditText
             android:id="@+id/edit_phone"
+            android:inputType="phone"
             style="@style/register_edit_style2"
             android:hint="@string/hint_phone"/>
 
@@ -59,6 +60,7 @@
 
         <EditText
             android:id="@+id/edit_psw"
+            android:inputType="textPassword"
             style="@style/register_edit_style2"
             android:layout_marginTop="@dimen/dimen_8"
             android:hint="设置密码 6-16位数字或密码"/>

@@ -130,6 +130,7 @@
 
                 <EditText
                     android:id="@+id/edit_psw"
+                    android:inputType="textPassword"
                     style="@style/register_edit_style1"
                     android:hint="@string/hint_psw"/>
             </LinearLayout>

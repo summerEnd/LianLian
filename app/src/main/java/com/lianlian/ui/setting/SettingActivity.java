@@ -1,4 +1,4 @@
-package com.lianlian.ui.other.setting;
+package com.lianlian.ui.setting;
 
 import android.content.Intent;
 import android.os.Bundle;
