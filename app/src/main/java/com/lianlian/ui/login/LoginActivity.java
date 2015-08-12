@@ -90,6 +90,14 @@ public class LoginActivity extends BaseActivity {
                                 .putString("password", pwd)
                                 .apply();
                     }
+
+                    @Override
+                    public void onException() {
+                        super.onException();
+                        // TODO: 15/8/12 test
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                        finish();
+                    }
                 });
                 break;
             }

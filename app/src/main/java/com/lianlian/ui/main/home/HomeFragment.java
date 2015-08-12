@@ -20,8 +20,6 @@ import com.sp.lib.widget.nav.title.PageStrip;
  */
 public class HomeFragment extends BaseFragment implements View.OnClickListener {
     private PageStrip pagerTitle;
-    private FoundFragment mFoundFragment = new FoundFragment();
-    private MeetFragment mSearchFragment = new MeetFragment();
     FragmentSwitcher switcher;
 
     @Nullable
@@ -34,8 +32,6 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
     }
 
     @Override

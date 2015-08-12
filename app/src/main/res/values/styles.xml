@@ -99,7 +99,7 @@
         <item name="android:paddingLeft">@dimen/dimen_23</item>
         <item name="android:paddingRight">@dimen/dimen_23</item>
         <item name="android:textColor">@color/windowTitleColor</item>
-        <item name="android:textSize">@dimen/text_16</item>
+        <item name="android:textSize">@dimen/text_14</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center</item>

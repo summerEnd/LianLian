@@ -41,5 +41,6 @@
     <string name="recore_voice_pic">录制有声图片（10s）</string>
     <string name="recore_dsc">&#160;&#160;&#160;&#160;(成为 “颜色值”、“人气榜”、“收入榜”及“土豪榜”的任一榜单TOP50、录音市场即可升级为30s)</string>
     <string name="title_activity_record">RecordActivity</string>
+    <string name="title_activity_chumo_detail">ChumoDetailActivity</string>
 
 </resources>

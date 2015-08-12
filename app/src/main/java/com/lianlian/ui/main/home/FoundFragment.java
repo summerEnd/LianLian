@@ -14,6 +14,7 @@ import com.lianlian.ui.main.home.rank.FaceRankActivity;
 import com.lianlian.ui.main.home.rank.HotRankActivity;
 import com.lianlian.ui.main.home.rank.PayRankActivity;
 import com.lianlian.ui.main.home.rank.TuhaoRankActivity;
+import com.lianlian.ui.test.DATA;
 import com.lianlian.ui.widget.HomeItem;
 import com.lianlian.utils.ImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -43,17 +44,21 @@ public class FoundFragment extends BaseFragment implements View.OnClickListener 
         return inflater.inflate(R.layout.found_fragment, container, false);
     }
 
-
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        banner = (BannerPager) getActivity().findViewById(R.id.banner);
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        banner = (BannerPager) view.findViewById(R.id.banner);
         ArrayList<String> images = new ArrayList<>();
         images.add("http://img1.imgcdns.com/allimg/140908/23454B1W-0.jpg");
         images.add("http://img1.imgcdns.com/allimg/140908/23454B1W-0.jpg");
         images.add("http://img1.imgcdns.com/allimg/140908/23454B1W-0.jpg");
         banner.setImageUrls(images);
         banner.start(3000);
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
         initialize();
     }
 
@@ -81,7 +86,7 @@ public class FoundFragment extends BaseFragment implements View.OnClickListener 
     }
 
     void setData(HomeItem item) {
-        String url = "http://f.hiphotos.baidu.com/image/pic/item/fc1f4134970a304e006c1b7ed2c8a786c8175ce3.jpg";
+        String url = DATA.SQUARE_IMAGE;
         ImageLoader.getInstance().displayImage(url, item.ivimage, ImageOptions.getStandard());
     }
 

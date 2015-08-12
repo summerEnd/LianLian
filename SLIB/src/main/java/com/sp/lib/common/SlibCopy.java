@@ -2,8 +2,11 @@ package com.sp.lib.common;
 
 import android.app.ActivityManager;
 import android.support.v4.app.ShareCompat;
+import android.webkit.WebViewFragment;
 
 class SlibCopy {
+    WebViewFragment f;
+
     /**
      * 这个类就是哥写着玩的，没有什么用
      */
