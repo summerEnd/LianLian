@@ -1,12 +1,14 @@
 package com.lianlian.adapter.chumo;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.lianlian.adapter.BaseAdapter;
 import com.lianlian.entity.Chumo;
+import com.lianlian.ui.main.chumo.ChumoDetailActivity;
 import com.lianlian.ui.test.DATA;
 import com.lianlian.ui.widget.HomeItem;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -36,12 +38,19 @@ public class ChumoGridAdapter extends BaseAdapter<Chumo> {
 
     }
 
-    private class ChumoHolder extends RecyclerView.ViewHolder {
+    private class ChumoHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         HomeItem homeItem;
 
         public ChumoHolder(HomeItem itemView) {
             super(itemView);
-            homeItem=itemView;
+            homeItem = itemView;
+            homeItem.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            Context context = v.getContext();
+            context.startActivity(new Intent(context, ChumoDetailActivity.class));
         }
     }
 }

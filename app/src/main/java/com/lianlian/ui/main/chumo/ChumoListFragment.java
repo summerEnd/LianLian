@@ -44,8 +44,4 @@ public class ChumoListFragment extends BaseFragment {
         recycleView.setAdapter(new ChumoGridAdapter(getActivity(), data));
         recycleView.addItemDecoration(new PaddingDecoration(6, 6, 6, 6));
     }
-
-    private void initialize() {
-
-    }
 }

@@ -207,4 +207,32 @@
         <item name="android:background">@drawable/rightarrow_grey</item>
     </style>
 
+    <style name="address_detail_text1">
+        <item name="android:layout_marginBottom">@dimen/dimen_3</item>
+        <item name="android:layout_marginTop">@dimen/dimen_3</item>
+        <item name="android:textSize">@dimen/text_14</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="chumo_detail_button1">
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">@dimen/dimen_15</item>
+        <item name="android:paddingRight">@dimen/dimen_15</item>
+        <item name="android:paddingTop">@dimen/dimen_6</item>
+        <item name="android:paddingBottom">@dimen/dimen_6</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">#404650</item>
+        <item name="android:drawableLeft">@drawable/collect</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="chumo_detail_avatar1">
+        <item name="android:src">@drawable/test_avatar</item>
+        <item name="android:layout_width">@dimen/dimen_35</item>
+        <item name="android:layout_height">@dimen/dimen_35</item>
+    </style>
+
 </resources>
