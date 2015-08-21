@@ -68,7 +68,6 @@ public class RecordActivity extends BaseActivity {
 
         @Override
         public void onClick(View v) {
-            // TODO Auto-generated method stub
             mRecorder = new MediaRecorder();
             mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
             mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);

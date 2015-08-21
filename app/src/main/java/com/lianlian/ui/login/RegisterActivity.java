@@ -13,13 +13,17 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.lianlian.AppDelegate;
 import com.lianlian.R;
+import com.lianlian.entity.UserInfo;
 import com.lianlian.http.HttpHandler;
 import com.lianlian.http.HttpInterface;
 import com.lianlian.http.HttpManager;
+import com.lianlian.http.HttpResponse;
 import com.lianlian.http.UserRequest;
 import com.lianlian.ui.BaseActivity;
 import com.lianlian.ui.widget.TimerButton;
+import com.sp.lib.common.util.JsonUtil;
 
 import org.apache.http.Header;
 import org.json.JSONException;
@@ -74,41 +78,40 @@ public class RegisterActivity extends BaseActivity {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tv_get_code: {
-                UserRequest request = new UserRequest(HttpInterface.MESSAGE);
-                request.put("phone", editphone.getText().toString());
-                request.put("type", "register");
+                UserRequest request = new UserRequest(HttpInterface.SEND_SMS);
+                request.put("mobilephone", editphone.getText().toString());
                 HttpManager.getInstance().get(this, request, new HttpHandler() {
+
                     @Override
-                    public void onResultOk(int statusCode, Header[] headers, JSONObject response) throws JSONException {
+                    public void onJsonResponseOk(HttpResponse response) throws JSONException {
+                        super.onJsonResponseOk(response);
                         tvgetcode.start();
                         tvgetcode.setEnabled(false);
                     }
+
                 });
 
                 break;
             }
             case R.id.register: {
 
-                if (!cbprotocol.isChecked()){
+                if (!cbprotocol.isChecked()) {
                     return;
                 }
 
                 UserRequest request = new UserRequest(HttpInterface.REGISTER);
-                request.put("phone", editphone.getText().toString());
+                request.put("mobilephone", editphone.getText().toString());
                 request.put("code", editcode.getText().toString());
-                request.put("pwd", editpsw.getText().toString());
+                request.put("password", editpsw.getText().toString());
                 HttpManager.getInstance().get(this, request, new HttpHandler() {
+
                     @Override
-                    public void onResultOk(int statusCode, Header[] headers, JSONObject response) throws JSONException {
+                    public void onJsonResponseOk(HttpResponse response) throws JSONException {
+                        AppDelegate.getInstance().setUserInfo(JsonUtil.get(response.data, UserInfo.class));
                         startActivity(new Intent(RegisterActivity.this, AddInfoActivity1.class));
                     }
 
-                    @Override
-                    public void onResultError(int statusCOde, Header[] headers, JSONObject response) throws JSONException {
-                        super.onResultError(statusCOde, headers, response);
-                        //todo test
-                        startActivity(new Intent(RegisterActivity.this, AddInfoActivity1.class));
-                    }
+
                 });
                 break;
             }

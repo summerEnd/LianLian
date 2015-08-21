@@ -6,7 +6,6 @@
     android:orientation="vertical"
     tools:context="com.lianlian.ui.main.me.MeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <Button
         android:id="@+id/setting"
         android:layout_width="match_parent"

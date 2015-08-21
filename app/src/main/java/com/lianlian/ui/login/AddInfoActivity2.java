@@ -10,11 +10,24 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 
+import com.lianlian.AppDelegate;
 import com.lianlian.R;
 import com.lianlian.adapter.LabelAdapter;
+import com.lianlian.adapter.decor.PaddingDecoration;
 import com.lianlian.entity.Label;
+import com.lianlian.entity.Tag;
+import com.lianlian.entity.UserInfo;
+import com.lianlian.http.HttpHandler;
+import com.lianlian.http.HttpInterface;
+import com.lianlian.http.HttpManager;
+import com.lianlian.http.HttpResponse;
+import com.lianlian.http.UserRequest;
 import com.lianlian.ui.BaseActivity;
+import com.sp.lib.common.util.JsonUtil;
 import com.sp.lib.common.util.RandomUtil;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +35,7 @@ import java.util.List;
 public class AddInfoActivity2 extends BaseActivity {
 
     private RecyclerView gridLayout;
+    private LabelAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,50 +49,47 @@ public class AddInfoActivity2 extends BaseActivity {
         gridLayout = (RecyclerView) findViewById(R.id.gridLayout);
         GridLayoutManager layout = new GridLayoutManager(this, 4);
         gridLayout.setLayoutManager(layout);
-        ArrayList<Label> labels=new ArrayList<>();
-        RandomUtil randomUtil=new RandomUtil();
-        for (int i = 0; i < 50; i++) {
-            Label label=new Label();
-            label.name = randomUtil.nextString(1, 20);
-            labels.add(label);
-        }
-        findViewById(R.id.btn_sure).setOnClickListener(new View.OnClickListener() {
+
+        findViewById(R.id.btn_sure).setOnClickListener(this);
+
+        adapter = new LabelAdapter(this, new ArrayList<Tag>());
+        gridLayout.setAdapter(adapter);
+        gridLayout.addItemDecoration(new PaddingDecoration(5, 5, 5, 5));
+        getTagList();
+    }
+
+    void getTagList() {
+        UserRequest request = new UserRequest(HttpInterface.GET_TAG_LIST);
+        request.put("cat_id", "1");
+        HttpManager.getInstance().post(this, request, new HttpHandler() {
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(AddInfoActivity2.this, AddInfoActivity3.class));
-
-            }
-        });
-
-
-        gridLayout.setAdapter(new LabelAdapter(this,labels));
-        gridLayout.addItemDecoration(new RecyclerView.ItemDecoration() {
-
-            @Override
-            public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-                outRect.set(5,5,5,5);
+            public void onJsonResponseOk(HttpResponse response) throws JSONException {
+                JsonUtil.getArray(new JSONArray(response.data), Tag.class, adapter.getData());
+                adapter.notifyDataSetChanged();
             }
         });
     }
 
-    void add(List<String> label){
-        int start=0;
-
-        for (String str:label){
-            Button button=new Button(this);
-            button.setText(str);
-            GridLayout.LayoutParams lp=new GridLayout.LayoutParams();
-            lp.setGravity(Gravity.FILL);
-            if (str.length()>5){
-
-                lp.columnSpec=GridLayout.spec(start,2);
-                start+=2;
-            }else{
-                lp.columnSpec=GridLayout.spec(start,1);
-                start+=1;
+    @Override
+    public void onClick(View v) {
+        super.onClick(v);
+        switch (v.getId()) {
+            case R.id.btn_sure: {
+                final UserInfo info = new UserInfo();
+                info.circle = adapter.getCheckedLabel();
+                HttpManager.updateUserInfo(info, new HttpHandler() {
+                    @Override
+                    public void onJsonResponseOk(HttpResponse response) throws JSONException {
+                        AppDelegate.getInstance().getUserInfo().append(info);
+                        onUserInfoUpdated();
+                    }
+                });
+                break;
             }
-            gridLayout.addView(button,lp);
         }
     }
 
+    protected void onUserInfoUpdated(){
+        startActivity(new Intent(AddInfoActivity2.this, AddInfoActivity3.class));
+    }
 }

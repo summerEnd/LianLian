@@ -56,7 +56,7 @@ public class ModifyPasswordActivity extends BaseActivity {
                     return;
                 }
                 UserRequest request = new UserRequest(HttpInterface.EditPwd);
-                request.put("phone", AppDelegate.getInstance().getUserInfo().phone);
+                request.put("phone", AppDelegate.getInstance().getUserInfo().mobilephone);
                 request.put("oldpwd", rawPassword.getText().toString());
                 request.put("newpwd", newPassword.getText().toString());
                 HttpManager.getInstance().post(this, request, new HttpHandler() {

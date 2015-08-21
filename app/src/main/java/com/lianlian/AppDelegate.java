@@ -13,11 +13,15 @@ public class AppDelegate extends SApplication {
         return Instances;
     }
 
-    public UserInfo getUserInfo(){
-        if (mUserInfo==null){
-            mUserInfo=new UserInfo();
+    public UserInfo getUserInfo() {
+        if (mUserInfo == null) {
+            mUserInfo = new UserInfo();
         }
         return mUserInfo;
+    }
+
+    public void setUserInfo(UserInfo userInfo) {
+        mUserInfo = userInfo;
     }
 
     @Override

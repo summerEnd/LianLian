@@ -1,12 +1,10 @@
 package com.lianlian.ui.widget;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Environment;
-import android.os.Parcelable;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.view.Gravity;
@@ -19,6 +17,9 @@ import com.lianlian.R;
 import com.sp.lib.common.util.ImageUtil;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -51,6 +52,11 @@ public class PictureWindow extends PopupWindow implements View.OnClickListener {
 
     public void onClick(View v) {
         dismiss();
+
+        capturedImage = new File(
+                Environment.getExternalStorageDirectory(),
+                getFileName());
+
         switch (v.getId()) {
             case R.id.openAlbum: {
                 Intent intent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
@@ -59,9 +65,7 @@ public class PictureWindow extends PopupWindow implements View.OnClickListener {
             }
             case R.id.openCamera: {
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                capturedImage = new File(
-                        Environment.getExternalStorageDirectory(),
-                        getFileName());
+
                 intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(capturedImage));
                 activity.startActivityForResult(intent, CAPTURE_IMAGE);
                 break;
@@ -73,6 +77,8 @@ public class PictureWindow extends PopupWindow implements View.OnClickListener {
      * 剪裁图片
      */
     private void cropImage(Uri uri) {
+
+
         Intent intent = new Intent("com.android.camera.action.CROP");
         intent.setDataAndType(uri, "image/*");
         intent.putExtra("crop", "true");
@@ -81,7 +87,7 @@ public class PictureWindow extends PopupWindow implements View.OnClickListener {
         intent.putExtra("aspectY", 1);
         intent.putExtra("outputX", 400);
         intent.putExtra("outputY", 400);
-        //        intent.putExtra("output", cameraUri);// 保存到原文件
+        //        intent.putExtra("output", capturedImage);// 保存到原文件
         intent.putExtra("outputFormat", "JPEG");// 返回格式
         intent.putExtra("return-data", true);
         activity.startActivityForResult(intent, CROP_IMAGE);
@@ -98,10 +104,8 @@ public class PictureWindow extends PopupWindow implements View.OnClickListener {
             return;
         }
         if (requestCode == RESULT_LOAD_IMAGE && null != data) {
-            Uri selectedImage = data.getData();
 
-            cropImage(selectedImage);
-
+            cropImage(data.getData());
 
         } else if (requestCode == CAPTURE_IMAGE) {
             if (capturedImage == null || !capturedImage.exists()) {
@@ -111,15 +115,45 @@ public class PictureWindow extends PopupWindow implements View.OnClickListener {
             cropImage(Uri.fromFile(capturedImage));
         } else if (requestCode == CROP_IMAGE && null != data) {
             Bitmap bitmap = data.getExtras().getParcelable("data");
-            onImageLoaded(bitmap);
+
+            onImageFileLoaded(bitmap, saveBitmap(bitmap));
         }
     }
 
+    File saveBitmap(Bitmap bitmap) {
+        File file = new File(Environment.getExternalStorageDirectory(), getFileName());
+        FileOutputStream fot = null;
+
+        try {
+            fot = new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fot);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            if (null != fot) {
+                try {
+                    fot.flush();
+                    fot.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return file;
+    }
+
+    /**
+     * @param bitmap
+     * @deprecated
+     */
     protected void onImageLoaded(Bitmap bitmap) {
 
     }
 
-    public void show(View view){
-        showAtLocation(view, Gravity.BOTTOM,0,0);
+    protected void onImageFileLoaded(Bitmap bitmap, File file) {
+    }
+
+    public void show(View view) {
+        showAtLocation(view, Gravity.BOTTOM, 0, 0);
     }
 }

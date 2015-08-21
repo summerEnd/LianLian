@@ -9,7 +9,7 @@ import com.sp.lib.common.support.net.client.SRequest;
 public class UserRequest extends SRequest {
     public UserRequest(String url) {
         super(url);
-        put("userid", AppDelegate.getInstance().getUserInfo().id);
+        put("user_id", AppDelegate.getInstance().getUserInfo().user_id);
     }
 
     public UserRequest() {

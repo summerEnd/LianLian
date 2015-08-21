@@ -108,7 +108,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/complete_info_edit_1"
-                android:text="@string/select_birthday"
+                android:hint="@string/select_birthday"
                 android:textColor="#a3a3a5"/>
         </LinearLayout>
 

@@ -84,7 +84,6 @@ public class XCFlowLayout extends ViewGroup {
     private List<Integer> mLineHeight = new ArrayList<Integer>();
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        // TODO Auto-generated method stub
         mAllChildViews.clear();
         mLineHeight.clear();
         //获取当前ViewGroup的宽度
@@ -155,8 +154,7 @@ public class XCFlowLayout extends ViewGroup {
      */
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
-        // TODO Auto-generated method stub
-        
+
         return new MarginLayoutParams(getContext(), attrs);
     }
 }

@@ -1,9 +1,9 @@
 package com.lianlian.ui.login;
 
-import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -19,12 +19,14 @@ import com.lianlian.entity.UserInfo;
 import com.lianlian.http.HttpHandler;
 import com.lianlian.http.HttpInterface;
 import com.lianlian.http.HttpManager;
+import com.lianlian.http.HttpResponse;
 import com.lianlian.http.UserRequest;
 import com.lianlian.ui.BaseActivity;
 import com.lianlian.ui.main.MainActivity;
 import com.lianlian.ui.setting.FindPasswordAcrivity;
 import com.sp.lib.common.support.net.client.SRequest;
 import com.sp.lib.common.util.ContextUtil;
+import com.sp.lib.common.util.JsonUtil;
 import com.umeng.socialize.bean.SHARE_MEDIA;
 import com.umeng.socialize.bean.StatusCode;
 import com.umeng.socialize.controller.UMServiceFactory;
@@ -36,9 +38,7 @@ import com.umeng.socialize.sso.UMQQSsoHandler;
 import com.umeng.socialize.sso.UMSsoHandler;
 import com.umeng.socialize.weixin.controller.UMWXHandler;
 
-import org.apache.http.Header;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.Map;
 import java.util.Set;
@@ -100,8 +100,9 @@ public class LoginActivity extends BaseActivity {
 
         mController.getConfig().setSsoHandler(new SinaSsoHandler());
 
-//        UMWXHandler wxHandler = new UMWXHandler(LoginActivity.this, ApiConfig.WE_CHAT_APP_ID, ApiConfig.WE_CHAT_APP_SECRET);
-//        wxHandler.addToSocialSDK();
+        UMWXHandler wxHandler = new UMWXHandler(LoginActivity.this, ApiConfig.WE_CHAT_APP_ID, ApiConfig.WE_CHAT_APP_SECRET);
+
+        wxHandler.addToSocialSDK();
 
     }
 
@@ -111,33 +112,25 @@ public class LoginActivity extends BaseActivity {
         switch (v.getId()) {
             case R.id.login: {
 
-                UserRequest request = new UserRequest(HttpInterface.PHONE_LOGIN);
+                UserRequest request = new UserRequest(HttpInterface.LOGIN);
                 final String phone = editphone.getText().toString();
                 final String pwd = editpsw.getText().toString();
 
-                request.put("username", phone);
-                request.put("pwd", pwd);
+                request.put("mobilephone", phone);
+                request.put("password", pwd);
                 HttpManager.getInstance().get(this, request, new HttpHandler() {
                     @Override
-                    public void onResultOk(int statusCode, Header[] headers, JSONObject response) throws JSONException {
-                        UserInfo userInfo = AppDelegate.getInstance().getUserInfo();
-                        userInfo.id = response.getString("userid");
-                        userInfo.phone = phone;
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                        finish();
+                    public void onJsonResponseOk(HttpResponse response) throws JSONException {
+                        super.onJsonResponseOk(response);
+
                         getSharedPreferences("user", MODE_PRIVATE).edit()
                                 .putString("username", phone)
                                 .putString("password", pwd)
                                 .apply();
+                        loginWith(JsonUtil.get(response.data, UserInfo.class));
+
                     }
 
-                    @Override
-                    public void onException() {
-                        super.onException();
-                        // TODO: 15/8/12 test
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                        finish();
-                    }
                 });
                 break;
             }
@@ -150,22 +143,22 @@ public class LoginActivity extends BaseActivity {
                 break;
             }
             case R.id.iv_qq: {
-                login(SHARE_MEDIA.QQ);
+                thirdLogin(SHARE_MEDIA.QQ);
                 break;
             }
             case R.id.iv_weixin: {
-                login(SHARE_MEDIA.WEIXIN);
+                thirdLogin(SHARE_MEDIA.WEIXIN);
                 break;
             }
             case R.id.iv_weibo: {
-                login(SHARE_MEDIA.SINA);
+                thirdLogin(SHARE_MEDIA.SINA);
 
                 break;
             }
         }
     }
 
-    private void login(final SHARE_MEDIA platform) {
+    private void thirdLogin(final SHARE_MEDIA platform) {
 
         mController.doOauthVerify(this, platform, new SocializeListeners.UMAuthListener() {
 
@@ -185,8 +178,9 @@ public class LoginActivity extends BaseActivity {
             @Override
             public void onComplete(Bundle value, SHARE_MEDIA platform) {
                 String uid = value.getString("uid");
+                String access_token = value.getString("access_token");
                 if (!TextUtils.isEmpty(uid)) {
-                    getUserInfo(platform, uid);
+                    mController.getPlatformInfo(LoginActivity.this, platform, new GetPlatformListener(platform, uid, access_token));
                 } else {
                     ContextUtil.toast("授权失败！");
                 }
@@ -198,63 +192,91 @@ public class LoginActivity extends BaseActivity {
         });
     }
 
-
     /**
-     * 获取授权平台的用户信息</br>
+     * 登录系统
+     *
+     * @param userInfo
      */
-    private void getUserInfo(final SHARE_MEDIA platform, final String uid) {
-        mController.getPlatformInfo(this, platform, new SocializeListeners.UMDataListener() {
-
-            @Override
-            public void onStart() {
-
-            }
-
-            @Override
-            public void onComplete(int status, Map<String, Object> info) {
-                // String showText = "";
-                // if (status == StatusCode.ST_CODE_SUCCESSED) {
-                // showText = "用户名：" + info.get("screen_name").toString();
-                // Log.d("#########", "##########" + info.toString());
-
-                // } else {
-                // showText = "获取用户信息失败";
-                // }
-                if (status == StatusCode.ST_CODE_SUCCESSED && info != null) {
-                    StringBuilder sb = new StringBuilder();
-                    Set<String> keys = info.keySet();
-                    for (String key : keys) {
-                        sb.append(key + "=" + info.get(key).toString() + "\r\n");
-                    }
-                    Log.d("TestData", sb.toString());
-
-                    JSONObject userInfo = new JSONObject();
-                    try {
-
-                        String name = "";
-                        String openid = "";
-                        if (null != info.get("screen_name")) {
-                            name = info.get("screen_name").toString();
-                        } else if (null != info.get("nickname")) {
-                            name = info.get("nickname").toString();
-                        }
-
-                        if (null != info.get("unionid") && platform.equals(SHARE_MEDIA.WEIXIN)) {
-                            openid = info.get("unionid").toString();
-                        } else {
-                            openid = uid;
-                        }
-
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                        ContextUtil.toast("授权失败！");
-                    }
-                } else {
-                }
-            }
-        });
+    void loginWith(@NonNull UserInfo userInfo) {
+        AppDelegate.getInstance().setUserInfo(userInfo);
+//        startActivity(new Intent(LoginActivity.this, AddInfoActivity1.class));
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+        finish();
     }
 
+
+    private class GetPlatformListener implements SocializeListeners.UMDataListener {
+        private SHARE_MEDIA platform;
+        private String uid;
+        private String access_token;
+
+        public GetPlatformListener(SHARE_MEDIA platform, String uid, String access_token) {
+            this.platform = platform;
+            this.uid = uid;
+            this.access_token = access_token;
+        }
+
+        @Override
+        public void onStart() {
+
+        }
+
+        @Override
+        public void onComplete(int status, Map<String, Object> info) {
+
+            if (status == StatusCode.ST_CODE_SUCCESSED && info != null) {
+                StringBuilder sb = new StringBuilder();
+                Set<String> keys = info.keySet();
+                for (String key : keys) {
+                    sb.append(key).append("=").append(info.get(key).toString()).append("\r\n");
+                }
+                Log.d("TestData", sb.toString());
+
+                try {
+
+                    String openid = uid;
+                    String type = "";
+
+                    switch (platform) {
+                        case WEIXIN: {
+                            type = "1";
+                            Object unionid = info.get("unionid");
+                            if (unionid != null) {
+                                openid = unionid.toString();
+                            }
+
+                            break;
+                        }
+                        case QQ:
+                        case QZONE: {
+                            type = "2";
+                            break;
+                        }
+
+                        case SINA: {
+                            type = "3";
+                            break;
+                        }
+                    }
+
+
+                    SRequest request = new SRequest(HttpInterface.THIRD_LOGIN);
+                    request.put("access_token", access_token);
+                    request.put("openid", openid);
+                    request.put("type", type);
+                    HttpManager.getInstance().post(LoginActivity.this, request, new HttpHandler() {
+                        @Override
+                        public void onJsonResponseOk(HttpResponse response) throws JSONException {
+                            loginWith(JsonUtil.get(response.data, UserInfo.class));
+                        }
+                    });
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    ContextUtil.toast("授权失败！");
+                }
+            }
+        }
+    }
 
     //如果有使用任一平台的SSO授权,则必须在对应的activity中实现onActivityResult方法,并添加如下代码
     @Override
